@@ -7,12 +7,12 @@ import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Paperclip, Send, User, Bot } from 'lucide-react';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Send, User, Bot } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from "@/hooks/use-toast";
-import { askVendorQuestion } from '@/actions/aiActions';
-import { mockVendors } from '@/data/mock'; // To provide vendor context to AI
+import { chatWithVira, getVendors } from '@/services/firebase';
+import type { Vendor } from '@/types';
 
 const chatSchema = z.object({
   message: z.string().min(1, { message: 'Message cannot be empty.' }),
@@ -27,29 +27,41 @@ interface Message {
   timestamp: Date;
 }
 
+// [R10] Implements the ViRA Chat interface.
 export function ChatInterface() {
   const [messages, setMessages] = React.useState<Message[]>([]);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [vendorDataContext, setVendorDataContext] = React.useState<string>('');
   const { toast } = useToast();
   const scrollAreaRef = React.useRef<HTMLDivElement>(null);
 
   const form = useForm<ChatInput>({
     resolver: zodResolver(chatSchema),
-    defaultValues: {
-      message: '',
-    },
+    defaultValues: { message: '' },
   });
 
-  // Prepare vendor data once
-  const vendorDataContext = React.useMemo(() => JSON.stringify(mockVendors.map(v => ({
-    name: v.name,
-    location: v.location,
-    rating: v.rating,
-    reviewCount: v.reviewCount,
-    services: v.services,
-    notes: v.notes
-  }))), []);
+  // [R10.3] Fetches all vendor data to provide as context to the chat agent.
+  React.useEffect(() => {
+    const fetchVendorContext = async () => {
+        try {
+            const vendors = await getVendors();
+            const context = JSON.stringify(vendors.map(v => ({
+                name: v.name,
+                location: v.location,
+                rating: v.rating,
+                reviewCount: v.reviewCount,
+                services: v.services,
+                notes: v.notes
+            })));
+            setVendorDataContext(context);
+        } catch (error) {
+            toast({ title: "Error", description: "Could not load vendor context for chat.", variant: "destructive" });
+        }
+    };
+    fetchVendorContext();
+  }, [toast]);
 
+  // [R10.2] Handles form submission and calls the chat service function.
   const onSubmit: SubmitHandler<ChatInput> = async (data) => {
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -62,7 +74,7 @@ export function ChatInterface() {
     setIsLoading(true);
 
     try {
-      const aiResponse = await askVendorQuestion({
+      const aiResponse = await chatWithVira({
         vendorData: vendorDataContext,
         question: data.message,
       });
@@ -94,11 +106,12 @@ export function ChatInterface() {
   };
 
   React.useEffect(() => {
+    // Auto-scroll logic
     if (scrollAreaRef.current) {
-      const scrollElement = scrollAreaRef.current.querySelector('div[data-radix-scroll-area-viewport]');
-      if (scrollElement) {
-        scrollElement.scrollTop = scrollElement.scrollHeight;
-      }
+        const scrollElement = scrollAreaRef.current.querySelector('div[data-radix-scroll-area-viewport]');
+        if (scrollElement) {
+            scrollElement.scrollTop = scrollElement.scrollHeight;
+        }
     }
   }, [messages]);
 
@@ -113,41 +126,21 @@ export function ChatInterface() {
         <ScrollArea className="h-full p-4" ref={scrollAreaRef}>
           <div className="space-y-6">
             {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`flex items-end gap-3 ${
-                  msg.sender === 'user' ? 'justify-end' : 'justify-start'
-                }`}
-              >
+              <div key={msg.id} className={`flex items-end gap-3 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                 {msg.sender === 'bot' && (
-                  <Avatar className="h-8 w-8">
-                    <AvatarFallback className="bg-primary text-primary-foreground"><Bot size={18}/></AvatarFallback>
-                  </Avatar>
+                  <Avatar className="h-8 w-8"><AvatarFallback className="bg-primary text-primary-foreground"><Bot size={18}/></AvatarFallback></Avatar>
                 )}
-                <div
-                  className={`max-w-[70%] rounded-xl px-4 py-3 text-sm shadow-md ${
-                    msg.sender === 'user'
-                      ? 'bg-primary text-primary-foreground rounded-br-none'
-                      : 'bg-secondary text-secondary-foreground rounded-bl-none'
-                  }`}
-                >
+                <div className={`max-w-[70%] rounded-xl px-4 py-3 text-sm shadow-md ${msg.sender === 'user' ? 'bg-primary text-primary-foreground rounded-br-none' : 'bg-secondary text-secondary-foreground rounded-bl-none'}`}>
                   <p className="whitespace-pre-wrap">{msg.text}</p>
-                  <p className={`text-xs mt-1 ${msg.sender === 'user' ? 'text-primary-foreground/70 text-right' : 'text-secondary-foreground/70 text-left'}`}>
-                    {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                  </p>
                 </div>
-                {msg.sender === 'user' && (
-                   <Avatar className="h-8 w-8">
-                    <AvatarFallback className="bg-accent text-accent-foreground"><User size={18}/></AvatarFallback>
-                  </Avatar>
+                 {msg.sender === 'user' && (
+                   <Avatar className="h-8 w-8"><AvatarFallback className="bg-accent text-accent-foreground"><User size={18}/></AvatarFallback></Avatar>
                 )}
               </div>
             ))}
             {isLoading && (
               <div className="flex items-end gap-3 justify-start">
-                <Avatar className="h-8 w-8">
-                   <AvatarFallback className="bg-primary text-primary-foreground"><Bot size={18}/></AvatarFallback>
-                </Avatar>
+                 <Avatar className="h-8 w-8"><AvatarFallback className="bg-primary text-primary-foreground"><Bot size={18}/></AvatarFallback></Avatar>
                 <div className="max-w-[70%] rounded-xl px-4 py-3 text-sm shadow-md bg-secondary text-secondary-foreground rounded-bl-none">
                   <div className="flex space-x-1 animate-pulse">
                     <div className="w-2 h-2 bg-muted-foreground rounded-full"></div>
@@ -162,14 +155,8 @@ export function ChatInterface() {
       </CardContent>
       <CardFooter className="p-4 border-t">
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex w-full items-center gap-2">
-          <Input
-            {...form.register('message')}
-            placeholder="Ask ViRA about vendors..."
-            className="flex-grow"
-            autoComplete="off"
-            disabled={isLoading}
-          />
-          <Button type="submit" size="icon" disabled={isLoading} className="bg-primary hover:bg-primary/90">
+          <Input {...form.register('message')} placeholder="Ask ViRA about vendors..." className="flex-grow" autoComplete="off" disabled={isLoading} />
+          <Button type="submit" size="icon" disabled={isLoading || !vendorDataContext} className="bg-primary hover:bg-primary/90">
             <Send className="h-5 w-5" />
           </Button>
         </form>

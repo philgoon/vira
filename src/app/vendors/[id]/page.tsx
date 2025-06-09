@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
-import { mockVendors, mockProjects } from '@/data/mock';
+import { getVendorById, getProjectsByVendor } from '@/services/firebase'; // Updated import
 import type { Vendor, Project } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -11,33 +11,69 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { MapPin, Star, Users, Mail, Briefcase, ArrowLeft, DollarSign, CalendarDays, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
-import { Progress } from '@/components/ui/progress'; // For potential ratings display
+import { Progress } from '@/components/ui/progress';
+import { useToast } from '@/hooks/use-toast';
+import { Skeleton } from '@/components/ui/skeleton';
 
+// [R8.3] Implements the vendor detail page, fetching data from the service layer.
 export default function VendorDetailPage() {
   const params = useParams();
   const vendorId = params.id as string;
   
   const [vendor, setVendor] = React.useState<Vendor | null>(null);
   const [relatedProjects, setRelatedProjects] = React.useState<Project[]>([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const { toast } = useToast();
 
   React.useEffect(() => {
-    if (vendorId) {
-      const foundVendor = mockVendors.find(v => v.id === vendorId);
-      setVendor(foundVendor || null);
-      if (foundVendor) {
-        const projects = mockProjects.filter(p => p.vendorId === vendorId);
-        setRelatedProjects(projects);
+    if (!vendorId) return;
+
+    const fetchVendorDetails = async () => {
+      setIsLoading(true);
+      try {
+        const foundVendor = await getVendorById(vendorId);
+        if (foundVendor) {
+          setVendor(foundVendor);
+          // This part needs to be implemented in the service layer
+           const projects = await getProjectsByVendor(vendorId);
+           setRelatedProjects(projects);
+        } else {
+          toast({ title: "Error", description: "Vendor not found.", variant: "destructive" });
+        }
+      } catch (error) {
+        toast({ title: "Error", description: "Could not fetch vendor details.", variant: "destructive" });
+      } finally {
+        setIsLoading(false);
       }
-    }
-  }, [vendorId]);
+    };
+
+    fetchVendorDetails();
+  }, [vendorId, toast]);
+
+  if (isLoading) {
+    return (
+      <div className="container mx-auto py-8">
+        <Skeleton className="h-10 w-48 mb-6" />
+        <div className="flex flex-col space-y-3">
+          <Skeleton className="h-[320px] w-full rounded-xl" />
+          <div className="space-y-4 p-6">
+            <Skeleton className="h-8 w-1/2" />
+            <Skeleton className="h-6 w-3/4" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-full" />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!vendor) {
     return (
       <div className="container mx-auto py-8 text-center">
-        <p className="text-xl text-muted-foreground">Loading vendor details or vendor not found...</p>
-         <Link href="/vendors" passHref>
+        <p className="text-xl text-muted-foreground">Vendor not found.</p>
+        <Link href="/vendors" passHref legacyBehavior>
           <Button variant="outline" className="mt-4">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Vendors
+            <ArrowLeft className="mr-2 h-4 w-4" /> Back to All Vendors
           </Button>
         </Link>
       </div>
@@ -46,13 +82,13 @@ export default function VendorDetailPage() {
 
   return (
     <div className="container mx-auto py-8">
-      <Link href="/vendors" passHref>
+      <Link href="/vendors" passHref legacyBehavior>
         <Button variant="outline" className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Vendors
         </Button>
       </Link>
-
       <Card className="overflow-hidden shadow-xl">
+        {/* ... Card content remains the same ... */}
         {vendor.imageUrl && (
           <div className="relative h-64 w-full md:h-80">
             <Image src={vendor.imageUrl} alt={vendor.name} layout="fill" objectFit="cover" data-ai-hint="professional services office"/>

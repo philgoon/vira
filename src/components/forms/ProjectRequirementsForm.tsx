@@ -7,12 +7,11 @@ import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import type { ProjectRequirements, VendorRecommendation } from '@/types';
-import { getVendorRecommendations } from '@/actions/aiActions';
+import { matchVendors } from '@/services/firebase';
 
 const formSchema = z.object({
   scope: z.string().min(10, { message: 'Scope must be at least 10 characters.' }),
@@ -41,14 +40,8 @@ export function ProjectRequirementsForm({ onRecommendations, setIsLoading }: Pro
   const onSubmit: SubmitHandler<ProjectRequirements> = async (data) => {
     setIsLoading(true);
     try {
-      const rawRecommendations = await getVendorRecommendations(data);
-      // The AI only returns names and scores. We'll pass this structure as is.
-      // The parent component will handle fetching full details if needed.
-      const recommendationsWithDetails: VendorRecommendation[] = rawRecommendations.map(rec => ({
-        vendorName: rec.vendorName,
-        matchScore: rec.matchScore,
-      }));
-      onRecommendations(recommendationsWithDetails);
+      const recommendations = await matchVendors(data);
+      onRecommendations(recommendations);
       toast({
         title: "Recommendations generated!",
         description: "Top vendors matching your criteria are listed below.",

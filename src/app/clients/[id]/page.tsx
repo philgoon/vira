@@ -4,40 +4,72 @@
 import * as React from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
-import { mockClients, mockProjects } from '@/data/mock';
+import { getClientById, getProjectsByClient } from '@/services/firebase';
 import type { Client, Project } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { ArrowLeft, Users, Mail, Briefcase, DollarSign, CalendarDays, CheckCircle2, Building, Info } from 'lucide-react';
 import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
+import { useToast } from '@/hooks/use-toast';
+import { Skeleton } from '@/components/ui/skeleton';
 
+// [R9.3] Implements the client detail page, fetching data from the service layer.
 export default function ClientDetailPage() {
   const params = useParams();
   const clientId = params.id as string;
 
   const [client, setClient] = React.useState<Client | null>(null);
   const [associatedProjects, setAssociatedProjects] = React.useState<Project[]>([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const { toast } = useToast();
 
   React.useEffect(() => {
-    if (clientId) {
-      const foundClient = mockClients.find(c => c.id === clientId);
-      setClient(foundClient || null);
-      if (foundClient) {
-        const projects = mockProjects.filter(p => p.clientId === clientId);
-        setAssociatedProjects(projects);
+    if (!clientId) return;
+
+    const fetchClientDetails = async () => {
+      setIsLoading(true);
+      try {
+        const foundClient = await getClientById(clientId);
+        if (foundClient) {
+          setClient(foundClient);
+          const projects = await getProjectsByClient(clientId);
+          setAssociatedProjects(projects);
+        } else {
+          toast({ title: "Error", description: "Client not found.", variant: "destructive" });
+        }
+      } catch (error) {
+        toast({ title: "Error", description: "Could not fetch client details.", variant: "destructive" });
+      } finally {
+        setIsLoading(false);
       }
-    }
-  }, [clientId]);
+    };
+
+    fetchClientDetails();
+  }, [clientId, toast]);
+
+  if (isLoading) {
+    return (
+      <div className="container mx-auto py-8">
+        <Skeleton className="h-10 w-48 mb-6" />
+        <div className="space-y-3">
+          <Skeleton className="h-24 w-full" />
+          <div className="space-y-4 p-6">
+            <Skeleton className="h-6 w-1/2" />
+            <Skeleton className="h-6 w-3/4" />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!client) {
     return (
       <div className="container mx-auto py-8 text-center">
-        <p className="text-xl text-muted-foreground">Loading client details or client not found...</p>
-         <Link href="/clients" passHref>
+        <p className="text-xl text-muted-foreground">Client not found.</p>
+        <Link href="/clients" passHref legacyBehavior>
           <Button variant="outline" className="mt-4">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Clients
+            <ArrowLeft className="mr-2 h-4 w-4" /> Back to All Clients
           </Button>
         </Link>
       </div>
@@ -46,12 +78,11 @@ export default function ClientDetailPage() {
 
   return (
     <div className="container mx-auto py-8">
-      <Link href="/clients" passHref>
+      <Link href="/clients" passHref legacyBehavior>
         <Button variant="outline" className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Clients
         </Button>
       </Link>
-
       <Card className="overflow-hidden shadow-xl mb-8">
         <CardHeader className="p-6 bg-secondary/20">
           <div className="flex items-center gap-4">
@@ -62,7 +93,6 @@ export default function ClientDetailPage() {
                 width={80}
                 height={80}
                 className="rounded-lg object-contain border bg-card p-1"
-                data-ai-hint="company brand"
                 />
             )}
             <div>
@@ -103,9 +133,7 @@ export default function ClientDetailPage() {
             )}
         </CardContent>
       </Card>
-
       <Separator className="my-8" />
-
       <section>
         <h3 className="font-headline text-2xl font-semibold mb-6 text-primary flex items-center">
           <Briefcase className="mr-3 h-6 w-6" /> Associated Projects ({associatedProjects.length})
@@ -139,4 +167,3 @@ export default function ClientDetailPage() {
     </div>
   );
 }
-

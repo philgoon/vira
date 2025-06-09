@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Users, Briefcase, MessageSquare, Settings, Building2 } from 'lucide-react';
+import { LayoutDashboard, Users, Briefcase, MessageSquare, Settings, Building2, GitCompareArrows } from 'lucide-react';
 import {
   SidebarHeader,
   SidebarContent,
@@ -11,13 +11,12 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarFooter,
-  SidebarTrigger,
 } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { href: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { href: '/project-matching', label: 'Project Matching', icon: GitCompareArrows },
   { href: '/clients', label: 'Clients', icon: Users },
   { href: '/vendors', label: 'Vendors', icon: Building2 },
   { href: '/projects', label: 'Projects', icon: Briefcase },
@@ -30,18 +29,17 @@ export function SidebarNav() {
   return (
     <>
       <SidebarHeader className="p-4">
-        <Link href="/" className="flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-sidebar-primary">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg>
-          <h1 className="text-2xl font-headline font-semibold text-sidebar-foreground">ViRA</h1>
+        <Link href="/project-matching" className="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-sidebar-primary">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <h1 className="text-2xl font-headline font-semibold text-sidebar-foreground">ViRA</h1>
         </Link>
       </SidebarHeader>
       <SidebarContent className="p-4">
         <SidebarMenu>
           {navItems.map((item) => (
             <SidebarMenuItem key={item.href}>
-              <Link href={item.href} legacyBehavior passHref>
                 <SidebarMenuButton
                   asChild
                   isActive={pathname === item.href}
@@ -51,12 +49,11 @@ export function SidebarNav() {
                   )}
                   tooltip={item.label}
                 >
-                  <a>
+                  <Link href={item.href}>
                     <item.icon className="mr-2 h-5 w-5" />
                     <span className="font-medium">{item.label}</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
-              </Link>
             </SidebarMenuItem>
           ))}
         </SidebarMenu>
