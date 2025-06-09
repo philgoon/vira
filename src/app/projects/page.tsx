@@ -1,6 +1,7 @@
+
 'use client';
 import * as React from 'react';
-import { mockProjects } from '@/data/mock';
+import { mockProjects, mockVendors } from '@/data/mock'; // Added mockVendors
 import type { Project } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -74,7 +75,7 @@ export default function ProjectsPage() {
                  {project.vendorId && (
                   <div className="flex items-center text-muted-foreground">
                     <Briefcase className="mr-2 h-4 w-4" />
-                    Vendor: {mockProjects.find(v => v.id === project.vendorId)?.name || 'N/A'}
+                    Vendor: {mockVendors.find(v => v.id === project.vendorId)?.name || 'N/A'}
                   </div>
                 )}
               </CardContent>
