@@ -1,3 +1,4 @@
+
 import type { Vendor, Project } from '@/types';
 
 export const mockVendors: Vendor[] = [
@@ -9,7 +10,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 5,
     services: ['Content'],
     contactEmail: 'carloyn@cjrousch.com',
-    notes: 'Skills: Excellent writer. Portfolio: https://cjrousch.com/. Pricing: per piece ($250). Status: Active',
+    notes: 'Status: Active. Industry: N/A. Skills: Excellent writer. Portfolio: https://cjrousch.com/. Pricing: per piece ($250). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -20,7 +21,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 8,
     services: ['Content'],
     contactEmail: 'jp@webcontentdevelopment.com',
-    notes: 'Skills: Excellent for auto, has been writing for catena for years and continues to do so now. Industry: Automotive. Pricing: per word (0.2). Status: Active',
+    notes: 'Status: Active. Industry: Automotive. Skills: Excellent for auto, has been writing for catena for years and continues to do so now. Portfolio: N/A. Pricing: per word (0.2). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2022.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -31,7 +32,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 11,
     services: ['Content'],
     contactEmail: 'brad@StarviewMarketing.com',
-    notes: 'Skills: Great quality, quick turnaround time. has worked on many clients in the auto industry, healthcare, B2B, would consider for any content project on roster. Industry: Misc.. Pricing: per piece ($250 - $500 depending on complexity). Status: Active',
+    notes: 'Status: Active. Industry: Misc.. Skills: Great quality, quick turnaround time. has worked on many clients in the auto industry, healthcare, B2B, would consider for any content project on roster. Portfolio: N/A. Pricing: per piece ($250 - $500 depending on complexity). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -42,7 +43,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 14,
     services: ['Content'],
     contactEmail: 'alexsilady@gmail.com',
-    notes: 'Skills: Consistently delivers a quality product with little revision . Industry: Financial . Pricing: per piece ("$150 - $200\nJAG PT Rate: $150 \nSGW Law Rate: $200"). Status: Active',
+    notes: 'Status: Active. Industry: Financial . Skills: Consistently delivers a quality product with little revision . Portfolio: N/A. Pricing: per piece ("$150 - $200 JAG PT Rate: $150 SGW Law Rate: $200"). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -53,7 +54,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 17,
     services: ['Content'],
     contactEmail: 'mjordanelizabeth@gmail.com',
-    notes: 'Portfolio: https://www.upwork.com/freelancers/~018bbc72deda8c0099. Pricing: per piece ($180-$240). Status: Active',
+    notes: 'Status: Active. Industry: N/A. Skills: N/A. Portfolio: https://www.upwork.com/freelancers/~018bbc72deda8c0099. Pricing: per piece ($180-$240). Contact Preference: Available for calls and emails as needed, Assign work in Upwork . Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -64,7 +65,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 20,
     services: ['Content'],
     contactEmail: 'N/A',
-    notes: 'Skills: Has been writing for CG for years and would be a good fit for any other financial based client. Pricing: per piece ($300). Status: Active',
+    notes: 'Status: Active. Industry: N/A. Skills: Has been writing for CG for years and would be a good fit for any other financial based client. Portfolio: N/A. Pricing: per piece ($300). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2023.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -75,7 +76,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 23,
     services: ['Content'],
     contactEmail: 'N/A',
-    notes: 'Skills: Excellent writer. Industry: Financial . Pricing: per piece ($700). Status: Active',
+    notes: 'Status: Active. Industry: Financial . Skills: Excellent writer. Portfolio: N/A. Pricing: per piece ($700). Contact Preference: Available for calls and emails as needed, Assign work in Upwork . Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -86,7 +87,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 26,
     services: ['Content'],
     contactEmail: 'graham.heeps@gmail.com',
-    notes: 'Industry: Automotive. Portfolio: https://www.grahamheeps.com/ . Pricing: per piece. Status: Testing',
+    notes: 'Status: Testing. Industry: Automotive. Skills: N/A. Portfolio: https://www.grahamheeps.com/ . Pricing: per piece (N/A). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2025.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -97,7 +98,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 29,
     services: ['Content'],
     contactEmail: 'Coral@Coraldawns.com',
-    notes: 'Skills: Can be trusted for projects . Portfolio: https://www.upwork.com/freelancers/~01d8dc0ebdf5eedb06. Pricing: per piece ($50/ each for 4 pieces, $62.50/each for 2 pieces, $65/each for individual ). Status: Testing',
+    notes: 'Status: Testing. Industry: No Specialty industry. Skills: Can be trusted for projects . Portfolio: https://www.upwork.com/freelancers/~01d8dc0ebdf5eedb06. Pricing: per piece ($50/ each for 4 pieces, $62.50/each for 2 pieces, $65/each for individual ). Contact Preference: Available for calls and emails as needed, Assign work in Upwork . Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -108,7 +109,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 32,
     services: ['Content'],
     contactEmail: 'support@getacopywriter.com',
-    notes: 'Pricing: per piece, depending on length ($200). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: per piece, depending on length ($200). Contact Preference: getacopywriter.com UN: copy@ singlethrow.com . Onboarding: 2020.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -119,7 +120,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 35,
     services: ['Content'],
     contactEmail: 'Matthonold@gmail.com',
-    notes: 'Pricing: per piece ($225). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: per piece ($225). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2025. Availability: capacity for 4 articles per month',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -130,7 +131,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 38,
     services: ['Graphic Design'],
     contactEmail: 'beckie@hawkart.com',
-    notes: 'Skills: can absolutely make changes to an already established design, or complete something that has a clear brand direction. Portfolio: www.hawkart.com. Pricing: hourly ($60). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: can absolutely make changes to an already established design, or complete something that has a clear brand direction. Portfolio: www.hawkart.com. Pricing: hourly ($60). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2022.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -141,7 +142,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 41,
     services: ['Graphic Design'],
     contactEmail: 'kaitlynsmithleis@gmail.om',
-    notes: 'Portfolio: https://kaitlynsmithleis.com/. Pricing: hourly ($50-$65). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: https://kaitlynsmithleis.com/. Pricing: hourly ($50-$65). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -152,7 +153,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 44,
     services: ['Graphic Design'],
     contactEmail: 'janhalili@gmail.com',
-    notes: 'Skills: consistent generates design that meets our needs and is high quality. is a go-to for DCG and could be for other clients as well . Portfolio: https://www.janhalili.com/. Pricing: hourly ($60). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: consistent generates design that meets our needs and is high quality. is a go-to for DCG and could be for other clients as well . Portfolio: https://www.janhalili.com/. Pricing: hourly ($60). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -163,7 +164,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 47,
     services: ['Graphic Design'],
     contactEmail: 'gabriela.lopez@creative-works.us',
-    notes: 'Skills: has a strong skillset for website designs and should absolutely be used in that capacity. good fit for something that is already developed and only requires tweaks. Pricing: hourly ($19 for design, $30 for animation). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: has a strong skillset for website designs and should absolutely be used in that capacity. good fit for something that is already developed and only requires tweaks. Portfolio: N/A. Pricing: hourly ($19 for design, $30 for animation). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2018.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -174,7 +175,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 50,
     services: ['Graphic Design'],
     contactEmail: 'jason@jasonnewcomb.com',
-    notes: 'Portfolio: http://www.jasonnewcomb.com/work/. Pricing: hourly ($35). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: http://www.jasonnewcomb.com/work/. Pricing: hourly ($35). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -185,7 +186,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 53,
     services: ['Graphic Design'],
     contactEmail: 'allison@indulgeslo.com',
-    notes: 'Portfolio: http://indulgeslo.com/. Pricing: hourly ($68.99/). Status: Testing',
+    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: http://indulgeslo.com/. Pricing: hourly ($68.99/). Contact Preference: Available for calls and emails as needed, not set up in Accelo . Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -196,7 +197,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 56,
     services: ['Graphic Design'],
     contactEmail: '643creativedesign@gmail.com',
-    notes: 'Portfolio: https://www.upwork.com/freelancers/amandaw576. Pricing: hourly ($55). Status: Testing',
+    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: https://www.upwork.com/freelancers/amandaw576. Pricing: hourly ($55). Contact Preference: Available for calls and emails as needed, not set up in Accelo . Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -207,7 +208,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 59,
     services: ['Graphic Design'],
     contactEmail: 'smeyer@slideffects.com',
-    notes: 'Portfolio: https://drive.google.com/drive/u/0/folders/10sPtccdof_4vB52OQ0TiArQg2UhpD6vr. Pricing: hourly (TBD). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: https://drive.google.com/drive/u/0/folders/10sPtccdof_4vB52OQ0TiArQg2UhpD6vr. Pricing: hourly (TBD). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -218,7 +219,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 62,
     services: ['Graphic Design'],
     contactEmail: 'mc@mattcannon.design',
-    notes: 'Portfolio: https://www.mattcannon.design/. Pricing: hourly ($65). Status: Testing',
+    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: https://www.mattcannon.design/. Pricing: hourly ($65). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -229,7 +230,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 65,
     services: ['SEO'],
     contactEmail: 'Allison@allisonthecontentwriter.com',
-    notes: 'Pricing: hourly ($35). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($35). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -240,7 +241,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 68,
     services: ['SEO'],
     contactEmail: 'phong.chieng@gmail.com',
-    notes: 'Pricing: hourly ($40). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($40). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -251,7 +252,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 71,
     services: ['SEO'],
     contactEmail: 'csirotzke@gmail.com',
-    notes: 'Pricing: hourly ($40). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($40). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -262,7 +263,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 74,
     services: ['Proofreading'],
     contactEmail: 'veronicaj1092@gmail.com',
-    notes: 'Pricing: project dependent (project dependent). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: project dependent (project dependent). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -273,7 +274,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 77,
     services: ['Proofreading'],
     contactEmail: 'N/A',
-    notes: 'Pricing: project dependent (project dependent). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: project dependent (project dependent). Contact Preference: UN: copy@singlethrow.com PW: current CMS. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -284,7 +285,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 80,
     services: ['Social Media'],
     contactEmail: 'kimberlynneumann@gmail.com',
-    notes: 'Pricing: Unknown - untested vendor (Unknown - untested vendor). Status: Testing',
+    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: Unknown - untested vendor (Unknown - untested vendor). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -295,7 +296,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 83,
     services: ['Paid Media'],
     contactEmail: 'paul@exdigita.com',
-    notes: 'Pricing: hourly ($13-$17 per hour). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($13-$17 per hour). Contact Preference: ppc@singlethrow.com/paidmedia@singlethrow.com. Onboarding: 2022.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -306,7 +307,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 86,
     services: ['Paid Media'],
     contactEmail: 'erica@fischersem.com',
-    notes: 'Pricing: spend based ("$350 per month per account for any accounts with a spend of $5,000 or less per month\n$500 per month per account for any accounts with a spend of $5,001 to $7,000 per month\n$750 per month per account for any accounts with a spend of $7,001 to $10,000 per month\n$1,000 per month per account for any accounts with a spend of $10,001 to $12,000 per month\n$1,250 per month per account for any accounts with a spend of $12,001 to $15,000 per month"). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: spend based ("$350 per month per account for any accounts with a spend of $5,000 or less per month $500 per month per account for any accounts with a spend of $5,001 to $7,000 per month $750 per month per account for any accounts with a spend of $7,001 to $10,000 per month $1,000 per month per account for any accounts with a spend of $10,001 to $12,000 per month $1,250 per month per account for any accounts with a spend of $12,001 to $15,000 per month"). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2022.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -317,7 +318,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 89,
     services: ['Paid Media'],
     contactEmail: 'alaiyadbenjamin@gmail.com',
-    notes: 'Pricing: hourly ($35/hour). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($35/hour). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -328,7 +329,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 92,
     services: ['Paid Media'],
     contactEmail: 'avani@mygrowthbuddy.com',
-    notes: 'Pricing: per month ($3,000-$4,000 for full time resource). Status: Testing',
+    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: per month ($3,000-$4,000 for full time resource). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2025.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -339,7 +340,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 95,
     services: ['Dev & Support'],
     contactEmail: 'N/A',
-    notes: 'Pricing: retainer ($4,000 per month). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: retainer ($4,000 per month). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2015.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -350,7 +351,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 98,
     services: ['Dev & Support'],
     contactEmail: 'torquato.t@proton.me',
-    notes: 'Skills: Clearly well versed with Wordpress - both design and build. We used Toto for Hope & Heroes and were impressed with his build work. Pricing: project dependent (project dependent). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: Clearly well versed with Wordpress - both design and build. We used Toto for Hope & Heroes and were impressed with his build work. Portfolio: N/A. Pricing: project dependent (project dependent). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2023.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -361,7 +362,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 101,
     services: ['Dev & Support'],
     contactEmail: 'ritwik@citytechcorp.com',
-    notes: 'Pricing: project dependent (project dependent). Status: Testing',
+    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: project dependent (project dependent). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2025.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -372,7 +373,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 104,
     services: ['Dev & Support'],
     contactEmail: 'admin@vizionality.com',
-    notes: 'Skills: The LP was done well and it also included a form. He needs very specific direction. Would use him for hourly updates. . Pricing: hourly ($50). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: The LP was done well and it also included a form. He needs very specific direction. Would use him for hourly updates. . Portfolio: N/A. Pricing: hourly ($50). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -383,7 +384,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 107,
     services: ['Dev & Support'],
     contactEmail: 'cameronneedham221@gmail.com',
-    notes: 'Pricing: hourly ($45). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($45). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -394,7 +395,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 110,
     services: ['Dev & Support'],
     contactEmail: 'cvilacoba@gmail.com',
-    notes: 'Skills: Can be trusted with any type of work, complex, simple, design based, or build based. She is a previous employee and is very well versed in our expectations. Excellent fit for our needs. . Pricing: hourly ($45). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: Can be trusted with any type of work, complex, simple, design based, or build based. She is a previous employee and is very well versed in our expectations. Excellent fit for our needs. . Portfolio: N/A. Pricing: hourly ($45). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -405,7 +406,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 113,
     services: ['Dev & Support'],
     contactEmail: 'mckenziemallen@gmail.com',
-    notes: 'Pricing: hourly ($50). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($50). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -416,7 +417,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 116,
     services: ['Data'],
     contactEmail: 'N/A',
-    notes: 'Status: ', // Status was empty in input
+    notes: 'Status: N/A. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: N/A (N/A). Contact Preference: N/A. Onboarding: N/A.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -425,9 +426,9 @@ export const mockVendors: Vendor[] = [
     location: 'Unknown',
     rating: 0,
     reviewCount: 119,
-    services: ['data'], // Type was 'data'
+    services: ['data'],
     contactEmail: 'N/A',
-    notes: 'Status: ', // Status was empty in input
+    notes: 'Status: N/A. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: N/A (N/A). Contact Preference: N/A. Onboarding: N/A.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -436,9 +437,9 @@ export const mockVendors: Vendor[] = [
     location: 'Unknown',
     rating: 0,
     reviewCount: 122,
-    services: ['data'], // Type was 'data'
+    services: ['data'],
     contactEmail: 'N/A',
-    notes: 'Status: ', // Status was empty in input
+    notes: 'Status: N/A. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: N/A (N/A). Contact Preference: N/A. Onboarding: N/A.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -449,41 +450,447 @@ export const mockVendors: Vendor[] = [
     reviewCount: 125,
     services: ['Paid Media'],
     contactEmail: 'heather@antaresdigitalmarketing.com',
-    notes: 'Skills: Previous employee of Single Throw who produces trusted work . Pricing: spend based (TBD). Status: Active',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: Previous employee of Single Throw who produces trusted work . Portfolio: N/A. Pricing: spend based (TBD). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2025.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
 ];
 
-export const mockProjects: Project[] = [
-  {
-    id: 'project1',
-    name: 'Enterprise CRM Overhaul',
-    description: 'Complete redesign and implementation of the company CRM.',
-    status: 'In Progress',
-    budget: 250000,
-    vendorId: 'vendor1', // Example, assuming CAROLYN ROUSCH (first new vendor) could fit.
-    startDate: '2023-08-01',
-    endDate: '2024-06-30',
-    teamRating: 4,
-  },
-  {
-    id: 'project2',
-    name: 'New E-commerce Platform',
-    description: 'Build a new online store with modern UX.',
-    status: 'Planning',
-    budget: 150000,
-    vendorId: 'vendor12', // Example, HAWK ART/BECKIE for design
-    startDate: '2024-01-15',
-  },
-  {
-    id: 'project3',
-    name: 'Customer Behavior Analysis',
-    description: 'Analyze customer data to identify purchasing patterns.',
-    status: 'Completed',
-    budget: 80000,
-    vendorId: 'vendor38', // Example, PRAVEEN for Data
-    startDate: '2023-05-01',
-    endDate: '2023-09-30',
-    teamRating: 5,
-  },
+const parseDate = (dateStr: string | undefined): string | undefined => {
+  if (!dateStr || dateStr.trim() === '') return undefined;
+  const parts = dateStr.split('/');
+  if (parts.length === 3) {
+    let year = parseInt(parts[2], 10);
+    // Assuming 2-digit years 00-50 are 20xx and 51-99 are 19xx - adjust as needed
+    if (year < 50) { 
+      year += 2000;
+    } else if (year < 100) {
+      year += 1900;
+    }
+    const month = parseInt(parts[0], 10);
+    const day = parseInt(parts[1], 10);
+    if (!isNaN(year) && !isNaN(month) && !isNaN(day)) {
+      try {
+        return new Date(year, month - 1, day).toISOString().split('T')[0];
+      } catch (e) {
+        // Invalid date, e.g. month > 12
+        return undefined;
+      }
+    }
+  }
+  return undefined; 
+};
+
+const generateRandomBudget = (): number => {
+  return Math.floor(Math.random() * (150000 - 5000 + 1)) + 5000;
+};
+
+const generateRandomRating = (): number => {
+  return Math.floor(Math.random() * 3) + 3; // 3, 4, or 5
+}
+
+const generateStartDate = (endDateStr: string | undefined): string | undefined => {
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  
+  if (!endDateStr) { // No end date, make start date in the last 3 months or a bit in future
+    const randomOffsetDays = Math.floor(Math.random() * 120) - 30; // -30 to +90 days from today
+    const startDate = new Date(today);
+    startDate.setDate(today.getDate() + randomOffsetDays);
+    return startDate.toISOString().split('T')[0];
+  }
+
+  const endDate = new Date(endDateStr);
+  endDate.setHours(0,0,0,0);
+
+  // Ensure endDate is valid before proceeding
+  if (isNaN(endDate.getTime())) {
+    const randomOffsetDays = Math.floor(Math.random() * 120) - 30;
+    const startDate = new Date(today);
+    startDate.setDate(today.getDate() + randomOffsetDays);
+    return startDate.toISOString().split('T')[0];
+  }
+  
+  const randomMonthsBefore = Math.floor(Math.random() * 6) + 1; // 1 to 6 months before
+  const startDate = new Date(endDate);
+  startDate.setMonth(endDate.getMonth() - randomMonthsBefore);
+  
+  // If calculated start date is after today (for future projects), make it a bit before today or up to today
+  if (startDate > today && endDate > today) {
+     const daysBeforeEndDate = Math.floor(Math.random() * ( (endDate.getTime() - today.getTime()) / (1000 * 3600 * 24) ) ) + 1;
+     const newStartDate = new Date(endDate);
+     newStartDate.setDate(endDate.getDate() - daysBeforeEndDate);
+     return newStartDate > today ? today.toISOString().split('T')[0] : newStartDate.toISOString().split('T')[0];
+  }
+  
+  return startDate.toISOString().split('T')[0];
+};
+
+
+const projectInputData = [
+  { client: 'Meeting Point Health', project: 'Meeting Point Health - Heal a rotator cuff naturally', due: '2/27/25' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - California State Funding blog', due: '1/16/25' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway: Florida State Funding / Step up for Students', due: '8/1/14' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - Alabama state funding', due: '2/10/25' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - Maine state funding blog', due: '12/10/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - blog - arkransas EFA', due: '10/29/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - best homeschools - utah', due: '9/10/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway Blog: Alaska state funding', due: '2/6/25' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - homeschool and socialization blog', due: '10/31/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway: Utal financial aid / homeschool fits all', due: '8/6/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway Blog - should i homeschool/bullying', due: '10/8/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - best homeschool fl', due: '9/12/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - does south carolina pay for homeschooling? blog', due: '8/2/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - NH education freedom accounts blog', due: '1/2/25' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - homeschooling/mental health', due: '10/22/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - WV hope scholarship blog', due: '9/13/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - blog - how to start homeschooling', due: '11/26/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - new blog - best homeschooling programs in south carolina', due: '8/22/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - north carolina state funding', due: '1/9/25' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway: Arizona ESA homeschool funding blog', due: '7/29/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - Idao state funding blog', due: '12/4/14' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - montana ESA - blog', due: '10/15/24' },
+  { client: 'Bridgeway Academy', project: 'Bridgeway - best homeschools - Arizona', due: '9/6/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgey Blog 2 - all on 4 dental implants', due: '5/21/24' },
+  { client: 'Bergen Oral', project: 'Bergen - blog - dental implants on gum disease', due: '10/30/24' },
+  { client: 'Bergen Oral', project: 'Bergen oral surgery - blog rewrite - mini dental implants', due: '9/19/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery Content Refresh: Home Page', due: '5/23/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery - blog - should i go to an oral surgeon?', due: '9/26/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery - dental implants and jaw alignment - blog', due: '2/11/25' },
+  { client: 'Bergen Oral', project: 'Bergen - sedation for wisdom teeth removal', due: '12/23/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral all on 4 target page refresh', due: '5/28/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery Blog: recovering from dental implants', due: '1/20/25' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery Blog - single tooth replacement options', due: '11/23/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery - Blog - broken wisdom tooth', due: '10/1/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery: June Blog: Signs you need wisdom teeth removed', due: '6/6/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery - Lyme disease and tooth loss', due: '1/24/25' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery Blog - can you keep your wisdom teeth?', due: '10/8/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery Blog 1 - best oral surgeons in NJ', due: '5/14/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery - Blog rewrite - pericoronitis', due: '9/16/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral Surgery Blog - impacted wisdom teeth', due: '1/28/25' },
+  { client: 'Transworld', project: 'TBA SD North - how to sell a small business - blog', due: '2/7/15' },
+  { client: 'Transworld', project: 'TBA SD North - how long does it take to sell a business? blog', due: '2/14/25' },
+  { client: 'Transworld', project: 'TBA Boston blog - when to see your buisness', due: '1/27/25' },
+  { client: 'Transworld', project: 'TBA Boston blog - selling a construction company', due: '1/29/25' },
+  { client: 'Transworld', project: 'TBA boston - business exit planning blog', due: '2/5/25' },
+  { client: 'Transworld', project: 'TBA boston - seling a plumbing business - blog', due: '2/14/25' },
+  { client: 'Transworld', project: 'Transworld: how much does a business valuation cost? blog', due: '2/13/25' },
+  { client: 'Transworld', project: 'Transworld - Goodwill in business - blog', due: '2/7/25' },
+  { client: 'Transworld', project: 'Transworld - how to transfer a business - blog', due: '2/19/25' },
+  { client: 'Transworld', project: 'Transworld - how to price a business for sale - blog', due: '2/10/25' },
+  { client: 'Transworld', project: 'Transworld Blog : what is seller financing for a business', due: '1/9/25' },
+  { client: 'Transworld', project: 'Transworld Blog: Selling a business that is not profitable', due: '1/16/25' },
+  { client: 'Nielsen Automotive Group', project: 'Nielsen Auto Group | January Content', due: '1/31/25' },
+  { client: 'Dave Cantin Group', project: 'DCG - jump IQ landing page - update language', due: '5/24/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - MOR Deep Dive - Valuations and industry adaptations', due: '7/30/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - write short video intro', due: '8/15/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - update language in Dave\'s blog', due: '5/24/24' },
+  { client: 'Dave Cantin Group', project: 'MOR - deeper dive - EV\'s impact of poltical and regulatory climate and changing consumer demand', due: '7/26/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - create \'attorney\' blog out of draft article', due: '5/1/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - \'post\' NADC recap blog', due: '9/19/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - update P&L blog with current information', due: '6/21/24' },
+  { client: 'Dave Cantin Group', project: 'DCG MOR deeper dive - M&A activity and dealer\'s interest in succession planning', due: '7/26/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - blog - five must-do tips for planning a leadership succession', due: '5/2/24' },
+  { client: 'Dave Cantin Group', project: 'DCG blog - cyber attack (see press release)', due: '7/2/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - TN/MS/AL conference sponsorship blog', due: '7/31/24' },
+  { client: 'Dave Cantin Group', project: 'DCG blog - customer service & dealer profitability', due: '5/8/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - floor planning blog', due: '7/3/24' },
+  { client: 'Dave Cantin Group', project: 'DCG blog: inventory supply and demand by days', due: '7/31/24' },
+  { client: 'SGW Law', project: 'SGW | December Content', due: '12/30/24' },
+  { client: 'SGW Law', project: 'SGW | October Content', due: '11/5/24' },
+  { client: 'SGW Law', project: 'SGW | January Content', due: '1/27/25' },
+  { client: 'SGW Law', project: 'SGW | February Content', due: '2/20/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG PT | November & December Content', due: '11/6/24' },
+  { client: 'JAG Physical Therapy', project: 'JAG PT | Q1 Content', due: '1/31/25' },
+  { client: 'Bergen Oral', project: 'Bergen Oral | Content for creative pieces', due: '11/13/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral | scannable Doc copy', due: '11/15/24' },
+  { client: 'Cg Team', project: 'Cg | Q4 content', due: '12/15/24' },
+  { client: 'Cg Team', project: 'Cg tax quarterly content', due: '6/21/24' },
+  { client: 'Cg Team', project: 'Cg | January content', due: '1/31/25' },
+  { client: 'Cg Team', project: 'Cg Tax | july content', due: '8/5/24' },
+  { client: 'Cg Team', project: 'Cg Tax | august content', due: '8/13/24' },
+  { client: 'Cg Team', project: 'Cg Tax | september content', due: '8/21/24' },
+  { client: 'Town Square Marlton NJ', project: 'Town Square: Ad revisions', due: '6/1/23' },
+  { client: 'Town Square Jersey Shore', project: 'Town square jersey shore: headshot formatting', due: '5/26/22' },
+  { client: 'The Dome at Adventure Crossing', project: 'adventure crossing - edits needed to labor day filer', due: '9/1/23' },
+  { client: 'The Dome at Adventure Crossing', project: 'the dome: quick menu edit', due: '4/18/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'dome | website header', due: '6/21/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'update logos on banner Ads', due: '2/9/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome: finalize step & repeat', due: '5/1/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'ADV CROSSING: update lawn sign creative', due: '9/5/23' },
+  { client: 'The Dome at Adventure Crossing', project: 'Adv crossing: menu revisions', due: '1/18/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'update logos on banner ads', due: '2/12/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'Adventure Crossing: PDF text message flyer', due: '9/5/23' },
+  { client: 'The Dome at Adventure Crossing', project: 'Update LOGO on google ads', due: '1/12/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'ADV Crossing: Menu updates', due: '12/26/23' },
+  { client: 'The Dome at Adventure Crossing', project: 'Update THE DOME LOGO (again) - Google Ads', due: '2/13/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'Adv Crossing: One sheeter for events', due: '12/14/23' },
+  { client: 'The Dome at Adventure Crossing', project: 'THE DOME: event PDF updates', due: '3/21/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'Adventure Crossing: Digital sign slide', due: '4/22/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'Adv Crossing: social media wall design', due: '8/11/23' },
+  { client: 'The Dome at Adventure Crossing', project: 'Adv Crossing: menu changes', due: '6/15/23' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome: Resize videos as thumbnails', due: '3/13/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome: banner image update', due: '5/22/24' },
+  { client: 'Single Throw Operations', project: 'Performance Ortho: Blue body', due: '10/17/24' },
+  { client: 'Single Throw Operations', project: 'STM Business Cards', due: '11/4/22' },
+  { client: 'Single Throw Operations', project: 'Retouching', due: '10/13/22' },
+  { client: 'Single Throw Operations', project: 'ST | Business card updates', due: '10/28/24' },
+  { client: 'SH Town Square Franchsing, Inc', project: 'Town Square: navigation mockup', due: '5/21/24' },
+  { client: 'SH Town Square Franchsing, Inc', project: 'Town Square: Image touch up', due: '9/26/24' },
+  { client: 'SH Town Square Franchsing, Inc', project: 'Town Square redesign PSDs', due: '3/28/24' },
+  { client: 'SH Town Square Franchsing, Inc', project: 'Town Square: map graphic', due: '6/17/24' },
+  { client: 'Seaview Orthopaedics', project: 'Seaview: creative update', due: '5/2/24' },
+  { client: 'Seaview Orthopaedics', project: 'Seaview Orthopedic display ads', due: '4/22/24' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: slight menu edit', due: '' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: edit slice logo', due: '3/13/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: menu updates', due: '' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: update to business card for Jeremy', due: '9/20/24' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s : update menu design', due: '3/16/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: review menu', due: '5/31/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s : update menu raydiant screen', due: '3/16/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: create print-ready files for stickers', due: '4/28/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: create specials raydiant screen', due: '3/29/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s - new menu edits', due: '10/22/24' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: review/vip sign up business card', due: '7/20/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: creative close-out tasks', due: '5/2/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: create screen graphics', due: '3/9/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: design edits for catering menu', due: '6/2/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boys: menu edits', due: '3/21/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boys: remove pricing from menu', due: '5/12/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: slice flyer', due: '3/16/23' },
+  { client: 'Sally Boy\'s Pizza', project: 'Update sally boy\'s menu design', due: '9/13/22' },
+  { client: 'Sally Boy\'s Pizza', project: 'Sally Boy\'s: menu proofing comments', due: '4/13/23' },
+  { client: 'Performance Ortho', project: 'Performance Ortho: Blue subpage headers', due: '10/18/24' },
+  { client: 'Performance Ortho', project: 'Performance Ortho: new headshots', due: '10/4/24' },
+  { client: 'Micro Air, LLC', project: 'Micro-Air product update ads', due: '5/29/24' },
+  { client: 'Micro Air, LLC', project: 'Micro-Air spring sale display ads', due: '4/5/24' },
+  { client: 'Micro Air, LLC', project: 'Create additional ad sizes', due: '3/12/25' },
+  { client: 'Micro Air, LLC', project: 'MicroAir-HOME-display sizes', due: '3/12/25' },
+  { client: 'Micro Air, LLC', project: 'Micro-Air RV display sizes', due: '3/12/25' },
+  { client: 'Micro Air, LLC', project: 'Micro Air display ads update', due: '2/23/24' },
+  { client: 'Micro Air, LLC', project: 'Another MicroAir display ad', due: '3/13/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG: website rebranding', due: '10/25/23' },
+  { client: 'Impackt Packaging Solutions', project: 'Impackt: Image edit', due: '6/24/22' },
+  { client: 'Dealer News Today', project: 'DNT: automotive news ad', due: '3/13/23' },
+  { client: 'DCG Giving', project: 'create map pin with current logo DCG giving log', due: '6/1/22' },
+  { client: 'Dave Cantin Group', project: 'DCG - OAp document updates - again', due: '4/4/24' },
+  { client: 'Dave Cantin Group', project: 'DCG Artwork for Bertera Nissan - PSD auto transaction', due: '8/14/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - resize logo', due: '12/20/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - Lancaster dodge closing', due: '12/8/23' },
+  { client: 'Dave Cantin Group', project: 'DCG', due: '2/19/24' },
+  { client: 'Dave Cantin Group', project: 'Update ads in Figma - DCG MOR', due: '11/12/24' },
+  { client: 'Dave Cantin Group', project: 'DCG rothrock transaction - card and banner', due: '10/18/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - create deal summary banner Stephen\'s transaction', due: '2/5/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - pitchbook ad - MOR - 160 x 420', due: '5/20/24' },
+  { client: 'Dave Cantin Group', project: 'Sally Boy\'s - business card - jeremy kirchmer', due: '9/12/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - update Brian\'s powerpoint slides', due: '1/24/24' },
+  { client: 'Dave Cantin Group', project: 'DCG capital - edits to QAP documents', due: '9/5/24' },
+  { client: 'Dave Cantin Group', project: 'DCG: Minor revisions to sales process document', due: '6/15/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - update brandon werley\'s business card with QR code', due: '12/22/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - home page hero images for Jump IQ', due: '11/22/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - create map of US with outlined regions and states', due: '5/22/24' },
+  { client: 'Dave Cantin Group', project: 'DCG recreate logo file on white background', due: '10/17/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - step and repeat design', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - resize logo for youtube', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - add headshot to grey gradient background', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - resize 2023 auto news ad', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - blaise transaction - card and banner needed', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG business card - Cameron Markeson', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG business card - todd kaminski', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - linkedin graphics based on template', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - pitchbook graphic - advisory services', due: '' },
+  { client: 'Dave Cantin Group', project: 'Redesign of DCG transactions for website', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG Poker chips - new variations needed', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - robin p. pate - business card', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG | business cards design', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG nada brochure revisions', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - create transaction card and deal header for MB northern arizona transaction', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - custom pen proof', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - jackson ford transaction artwork', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG transaction: MJ sullivan - card and header', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - business card for michael frank', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - create cover page for booklet, add branding to state map page', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - business card for michael frank', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - automotive news november ad', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG automotive news article for LinkedIn - graphic', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - major hyundai transaction graphics', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - transaction card and banner - Zeck Ford', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG business card - Dante Pileri', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - new business card - Brandon Werley', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - business card hugh morris', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - bruce molloy new pic - put headshot on grey gradient background', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - Todd\'s headshot', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG adjust ad size', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - headshot on gradient grey packground', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - create new header for giving portion of the site', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG -- Automotive news linkedIn graphic', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - quick capital banner please!!', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - OAp document updates - again', due: '' },
+  { client: 'Dave Cantin Group', project: 'DCG - jackson chevy transaction artwork', due: '6/3/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - state maps - powerpoint', due: '11/25/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - update copy on hero image', due: '2/6/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - memo sheet and fax cover sheet', due: '5/20/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - NADA reminder LinkedIn post', due: '9/27/23' },
+  { client: 'Dave Cantin Group', project: 'DCG Bruce malloy business card', due: '1/30/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - business card design', due: '9/17/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - C classic CDJR transaction tile and banner', due: '7/1/24' },
+  { client: 'Dave Cantin Group', project: 'DCG wordmark file', due: '12/9/24' },
+  { client: 'Dave Cantin Group', project: 'CG - new banner image for page', due: '11/30/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - cameron markeson headshot - add to gradient background', due: '5/23/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - clip headshot photos', due: '10/18/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - auto news masthead image - jump IQ story', due: '2/2/24' },
+  { client: 'Dave Cantin Group', project: 'Create 10x8 photos', due: '5/15/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - duplicate and edit automotive news ad', due: '9/15/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - MOR study report cover needed', due: '1/19/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - Malone ford transaction card and banner', due: '8/27/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - cerritos JLR transaction', due: '3/11/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - EuroCar transaction - banner and transaction card needed', due: '6/4/24' },
+  { client: 'Dave Cantin Group', project: 'DCG art work: crabtree-PSD transaction', due: '10/27/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - add colors to excel table in powerpoint', due: '5/21/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - Michael Frank headshot on grey gradient background', due: '2/14/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - transaction card and banner - schulte', due: '9/28/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - create transaction card for stephens CDJR acquisition', due: '1/30/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - cbt email creative', due: '1/5/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - update OAP PDF', due: '3/29/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - convert text from PDF to word document', due: '8/1/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - clip logo for C classic', due: '12/19/24' },
+  { client: 'Dave Cantin Group', project: 'Dealer news today - episode graphics', due: '12/5/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - ed morse transaction creative', due: '5/24/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - step & repeat - two design mock ups', due: '11/18/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - deal transaction card and deal summary banner', due: '10/18/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - add sharing icons to power point pages', due: '2/5/24' },
+  { client: 'Dave Cantin Group', project: 'DCG staff bio inserts - format content', due: '5/16/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - bsuiness cards - denise & jodi', due: '9/14/23' },
+  { client: 'Dave Cantin Group', project: 'DCG - Bannister CDJR transaction tile and banner', due: '1/23/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - clip robin pate\'s profile photo', due: '4/17/24' },
+  { client: 'Dave Cantin Group', project: 'DCG - luke murphy headshot - add to gray gradient background', due: '8/30/24' },
+  { client: 'Cg Team', project: 'Cg | Q4 content', due: '12/20/23' },
+  { client: 'Cg Team', project: 'Cg Tax quarterly content', due: '11/3/23' },
+  { client: 'Cg Team', project: 'Cg| january content', due: '2/9/24' },
+  { client: 'Cg Team', project: 'Cg tax | july content', due: '6/12/23' },
+  { client: 'Cg Team', project: 'Cg Tax | August content', due: '10/3/23' },
+  { client: 'Cg Team', project: 'Cg Tax | september content', due: '1/31/24' },
+  { client: 'CareOne', project: 'CareOne northampton postcard envelope', due: '4/26/24' },
+  { client: 'CareOne', project: 'create logo for harmony village cherry hill', due: '9/20/24' },
+  { client: 'CareOne', project: 'enter final project sizes - CareOne print matrix', due: '6/27/22' },
+  { client: 'CareOne', project: 'B2B display & LinkedIn - update creative', due: '6/29/22' },
+  { client: 'CareOne', project: 'print portal - highlight areas that can be edited', due: '7/26/22' },
+  { client: 'CareOne', project: 'reputation monitoring zoom webinar background creation', due: '11/4/22' },
+  { client: 'Bridgeway Academy', project: 'bridgeway - create more ads!', due: '7/1/22' },
+  { client: 'Bridgeway Academy', project: 'Create ads', due: '2/25/25' },
+  { client: 'Bergen Oral', project: 'Bergen oral | record release form', due: '12/2/24' },
+  { client: 'Bergen Oral', project: 'Bergen oral | letterhead updates', due: '11/1/24' },
+  { client: 'Bergen Oral', project: 'Bergen oral | creative updates', due: '11/8/24' },
+  { client: 'Bergen Oral', project: 'Bergen oral | practice summary', due: '11/15/24' },
+  { client: 'Bergen Oral', project: 'Bergen Oral | edits on letterhead', due: '9/30/24' },
+  { client: 'Bergen Oral', project: 'BOMS: small edit on referral form', due: '1/31/25' },
+  { client: 'Bergen Oral', project: 'Bergen Oral | scannable doc', due: '12/9/24' },
+  { client: 'Bergen Oral', project: 'Bergen | editable word doc', due: '12/2/24' },
+  { client: 'Bergen Oral', project: 'Redesign to look like Bergen Oral', due: '10/30/24' },
+  { client: 'Avanzar', project: 'AVANZAR: redesign impact statement', due: '3/6/24' },
+  { client: 'Avanzar', project: 'AVANZAR: quick turnaround ad', due: '3/15/24' },
+  { client: 'Avanzar', project: 'AVANZAR: create flyer', due: '4/15/24' },
+  { client: 'Avanzar', project: 'AVANZAR | image resizing', due: '9/20/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome: fact sheet revisions', due: '5/16/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome | EZ fundraiser fact sheet', due: '6/7/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'Dome | field day fact sheet', due: '6/24/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome: ValPak coupon', due: '5/20/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome: finesse creative', due: '6/8/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome - Kosher Menu', due: '4/12/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome: fact sheet changes', due: '5/22/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The dome: original fact sheet updates', due: '6/11/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'THE DOME: golf outing fact sheet', due: '4/30/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome | fundraiser screenhub', due: '7/15/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome | father\'s day flyer', due: '6/3/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome: design non-profit mailer', due: '6/24/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'THE DOME: networking event fact sheet', due: '5/6/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome | field day fact sheet', due: '6/7/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'Dome | EZ fundraiser', due: '6/24/24' },
+  { client: 'Bergen Oral', project: 'Bergen oral Surgery: thank you card design', due: '6/27/24' },
+  { client: 'Zippo\'s', project: 'Facebook/IG ads', due: '10/28/24' },
+  { client: 'Transworld', project: 'TBA: paid landing page', due: '11/15/24' },
+  { client: 'Single Throw Operations', project: 'ST: single throw website design', due: '8/30/24' },
+  { client: 'Veronica Jauregui', project: 'Proofing Project | Nielsen Automotive group', due: '2/11/25' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome: proof website', due: '5/14/24' },
+  { client: 'The Dome at Adventure Crossing', project: 'The Dome: proofread document', due: '5/18/24' },
+  { client: 'Single Throw Operations', project: 'Proofing document', due: '9/16/24' },
+  { client: 'Single Throw Operations', project: 'ST - proofread blog/page', due: '10/16/24' },
+  { client: 'Single Throw Operations', project: 'proof landing page', due: '10/31/24' },
+  { client: 'Single Throw Operations', project: 'STM | proofing document', due: '2/24/25' },
+  { client: 'Single Throw Operations', project: 'LB.com | Proofing PPC landing pages', due: '3/17/25' },
+  { client: 'Single Throw Operations', project: 'STM | proofing blog post', due: '2/6/25' },
+  { client: 'Nielsen Automotive Group', project: 'Nielsen | proofing: best mid-size SUVs', due: '2/17/25' },
+  { client: 'Nielsen Automotive Group', project: 'jeep wrangler vs ford bronco | proofreading', due: '2/24/25' },
+  { client: 'Nielsen Automotive Group', project: 'Nielsen auto group: document proof', due: '5/16/24' },
+  { client: 'Transworld', project: 'Transworld Corporate - valuation launch', due: '1/23/25' },
+  { client: 'Single Throw Operations', project: 'ST: NJMEP landing page options', due: '10/1/24' },
+  { client: 'Transworld', project: 'Transworld: blog reformatting project', due: '3/3/25' },
+  { client: 'Single Throw Operations', project: 'singlethrow | logo carousel', due: '2/6/25' },
+  { client: 'Ray Catena Motorcar', project: 'Ray catena LEV | model pages', due: '' },
+  { client: 'Performance Ortho', project: 'Performance ortho | leadership placement swap', due: '3/20/25' },
+  { client: 'Performance Ortho', project: 'hillsborough location: performance ortho', due: '3/13/25' },
+  { client: 'Performance Ortho', project: 'Meeting Point |PRP page', due: '3/11/25' },
+  { client: 'Meeting Point Health', project: 'Meeting Point health | peptides removal', due: '3/18/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | paramus headshot', due: '3/19/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | tribeca images', due: '3/12/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | performance rehab press release', due: '2/28/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | T3 article feature', due: '3/14/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | CD updates', due: '3/7/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | forbed article', due: '2/12/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | our team page updates', due: '3/13/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | location images', due: '3/3/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | forbes article', due: '11/22/24' },
+  { client: 'JAG Physical Therapy', project: 'JAG | headshot updates', due: '3/17/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | tribeca press release', due: '3/5/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | new grad mentorship page', due: '3/21/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | article feature', due: '3/13/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | great kills location setup', due: '11/25/24' },
+  { client: 'JAG Physical Therapy', project: 'JAG | AskMen article feature', due: '3/18/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | real simple feature', due: '3/7/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | specialized location content', due: '2/19/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | Nike article feature', due: '3/7/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | specialities content', due: '2/6/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | site hours update', due: '2/20/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | dry needling update', due: '3/14/25' },
+  { client: 'JAG Physical Therapy', project: 'JAG | monsignor farrell press release', due: '3/7/25' },
+  { client: 'Avanzar', project: 'AVANZAR: web dev estimate', due: '6/12/24' },
 ];
+
+
+export const mockProjects: Project[] = projectInputData.map((item, index) => {
+  const parsedEndDate = parseDate(item.due);
+  let status: Project['status'] = 'Planning';
+  let teamRating: number | undefined = undefined;
+  const today = new Date();
+  today.setHours(0,0,0,0); 
+
+  if (parsedEndDate) {
+    const endDateObj = new Date(parsedEndDate);
+    if (isNaN(endDateObj.getTime())) { // Invalid date parsed
+        status = 'Planning';
+    } else if (endDateObj < today) {
+      status = 'Completed';
+      teamRating = generateRandomRating();
+    } else {
+      status = 'In Progress';
+    }
+  } else {
+    status = 'Planning'; // No due date
+  }
+  
+  // Ensure project name uniqueness or specific formatting
+  const projectName = item.project.toLocaleLowerCase().startsWith(item.client.toLocaleLowerCase()) 
+    ? item.project 
+    : `${item.client} - ${item.project}`;
+
+  return {
+    id: `project${index + 1}`,
+    name: projectName,
+    description: item.project, // Using the original project name as description
+    status: status,
+    budget: generateRandomBudget(),
+    startDate: generateStartDate(parsedEndDate),
+    endDate: parsedEndDate,
+    vendorId: mockVendors.length > 0 ? mockVendors[Math.floor(Math.random() * mockVendors.length)].id : undefined,
+    teamRating: teamRating,
+  };
+});
