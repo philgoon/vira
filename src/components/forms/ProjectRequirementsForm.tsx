@@ -1,0 +1,146 @@
+'use client';
+
+import * as React from 'react';
+import { useForm, type SubmitHandler } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useToast } from "@/hooks/use-toast";
+import type { ProjectRequirements, VendorRecommendation } from '@/types';
+import { getVendorRecommendations } from '@/actions/aiActions';
+
+const formSchema = z.object({
+  scope: z.string().min(10, { message: 'Scope must be at least 10 characters.' }),
+  budget: z.coerce.number().min(0, { message: 'Budget must be a positive number.' }),
+  location: z.string().min(2, { message: 'Location must be at least 2 characters.' }),
+  preferredVendorAttributes: z.string().min(10, { message: 'Preferred attributes must be at least 10 characters.' }),
+});
+
+interface ProjectRequirementsFormProps {
+  onRecommendations: (recommendations: VendorRecommendation[]) => void;
+  setIsLoading: (isLoading: boolean) => void;
+}
+
+export function ProjectRequirementsForm({ onRecommendations, setIsLoading }: ProjectRequirementsFormProps) {
+  const { toast } = useToast();
+  const form = useForm<ProjectRequirements>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      scope: '',
+      budget: 0,
+      location: '',
+      preferredVendorAttributes: '',
+    },
+  });
+
+  const onSubmit: SubmitHandler<ProjectRequirements> = async (data) => {
+    setIsLoading(true);
+    try {
+      const rawRecommendations = await getVendorRecommendations(data);
+      // The AI only returns names and scores. We'll pass this structure as is.
+      // The parent component will handle fetching full details if needed.
+      const recommendationsWithDetails: VendorRecommendation[] = rawRecommendations.map(rec => ({
+        vendorName: rec.vendorName,
+        matchScore: rec.matchScore,
+      }));
+      onRecommendations(recommendationsWithDetails);
+      toast({
+        title: "Recommendations generated!",
+        description: "Top vendors matching your criteria are listed below.",
+      });
+    } catch (error) {
+      console.error("Failed to get recommendations:", error);
+      toast({
+        title: "Error",
+        description: (error as Error).message || "Could not fetch recommendations. Please try again.",
+        variant: "destructive",
+      });
+      onRecommendations([]); // Clear previous recommendations on error
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <Card className="w-full max-w-2xl shadow-lg">
+      <CardHeader>
+        <CardTitle className="font-headline text-2xl">Find Your Perfect Vendor</CardTitle>
+        <CardDescription>Enter your project details and let ViRA find the best matches.</CardDescription>
+      </CardHeader>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+          <CardContent className="space-y-6">
+            <FormField
+              control={form.control}
+              name="scope"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Project Scope</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="Describe the main goals and deliverables of your project..." {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    What are you trying to achieve?
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="budget"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Budget (USD)</FormLabel>
+                  <FormControl>
+                    <Input type="number" placeholder="e.g., 50000" {...field} />
+                  </FormControl>
+                   <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="location"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Preferred Location</FormLabel>
+                  <FormControl>
+                    <Input placeholder="e.g., New York, Remote, Global" {...field} />
+                  </FormControl>
+                   <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="preferredVendorAttributes"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Preferred Vendor Attributes</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="e.g., Experience in e-commerce, Strong portfolio, Agile methodology" {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    What qualities are most important in a vendor?
+                  </FormDescription>
+                   <FormMessage />
+                </FormItem>
+              )}
+            />
+          </CardContent>
+          <CardFooter>
+            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" disabled={form.formState.isSubmitting}>
+              {form.formState.isSubmitting ? 'Analyzing...' : 'Get Recommendations'}
+            </Button>
+          </CardFooter>
+        </form>
+      </Form>
+    </Card>
+  );
+}
