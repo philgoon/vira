@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -79,7 +80,7 @@ export default function ProjectDetailPage() {
             <div>
               <h4 className="font-semibold text-sm text-muted-foreground mb-1">Status</h4>
               <Badge variant={project.status === 'Completed' ? 'default' : project.status === 'In Progress' ? 'secondary' : 'outline'}
-                     className={`${project.status === 'Completed' ? 'bg-green-500 text-white' : project.status === 'In Progress' ? 'bg-blue-500 text-white': ''}`}>
+                     className={`${project.status === 'Completed' ? 'bg-green-500 text-white' : project.status === 'In Progress' ? 'bg-blue-500 text-white' : ''}`}>
                 <CheckCircle2 className="mr-2 h-4 w-4" />{project.status}
               </Badge>
             </div>
