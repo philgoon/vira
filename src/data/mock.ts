@@ -1,5 +1,5 @@
 
-import type { Vendor, Project } from '@/types';
+import type { Vendor, Project, Client } from '@/types';
 
 export const mockVendors: Vendor[] = [
   {
@@ -460,24 +460,26 @@ const parseDate = (dateStr: string | undefined): string | undefined => {
   const parts = dateStr.split('/');
   if (parts.length === 3) {
     let year = parseInt(parts[2], 10);
-    // Assuming 2-digit years 00-50 are 20xx and 51-99 are 19xx - adjust as needed
-    if (year < 50) { 
+    if (year < 50) {
       year += 2000;
     } else if (year < 100) {
       year += 1900;
     }
     const month = parseInt(parts[0], 10);
     const day = parseInt(parts[1], 10);
-    if (!isNaN(year) && !isNaN(month) && !isNaN(day)) {
+    if (!isNaN(year) && !isNaN(month) && !isNaN(day) && month >= 1 && month <= 12 && day >= 1 && day <= 31) {
       try {
-        return new Date(year, month - 1, day).toISOString().split('T')[0];
+        const d = new Date(year, month - 1, day);
+        if (d.getFullYear() === year && d.getMonth() === month -1 && d.getDate() === day) {
+          return d.toISOString().split('T')[0];
+        }
+        return undefined; // Invalid date like Feb 30
       } catch (e) {
-        // Invalid date, e.g. month > 12
         return undefined;
       }
     }
   }
-  return undefined; 
+  return undefined;
 };
 
 const generateRandomBudget = (): number => {
@@ -491,9 +493,9 @@ const generateRandomRating = (): number => {
 const generateStartDate = (endDateStr: string | undefined): string | undefined => {
   const today = new Date();
   today.setHours(0,0,0,0);
-  
-  if (!endDateStr) { // No end date, make start date in the last 3 months or a bit in future
-    const randomOffsetDays = Math.floor(Math.random() * 120) - 30; // -30 to +90 days from today
+
+  if (!endDateStr) {
+    const randomOffsetDays = Math.floor(Math.random() * 120) - 30;
     const startDate = new Date(today);
     startDate.setDate(today.getDate() + randomOffsetDays);
     return startDate.toISOString().split('T')[0];
@@ -502,26 +504,27 @@ const generateStartDate = (endDateStr: string | undefined): string | undefined =
   const endDate = new Date(endDateStr);
   endDate.setHours(0,0,0,0);
 
-  // Ensure endDate is valid before proceeding
   if (isNaN(endDate.getTime())) {
     const randomOffsetDays = Math.floor(Math.random() * 120) - 30;
     const startDate = new Date(today);
     startDate.setDate(today.getDate() + randomOffsetDays);
     return startDate.toISOString().split('T')[0];
   }
-  
-  const randomMonthsBefore = Math.floor(Math.random() * 6) + 1; // 1 to 6 months before
+
+  const randomMonthsBefore = Math.floor(Math.random() * 6) + 1;
   const startDate = new Date(endDate);
   startDate.setMonth(endDate.getMonth() - randomMonthsBefore);
-  
-  // If calculated start date is after today (for future projects), make it a bit before today or up to today
+
   if (startDate > today && endDate > today) {
-     const daysBeforeEndDate = Math.floor(Math.random() * ( (endDate.getTime() - today.getTime()) / (1000 * 3600 * 24) ) ) + 1;
+     const daysBetween = (endDate.getTime() - today.getTime()) / (1000 * 3600 * 24);
+     if (daysBetween <=0) return today.toISOString().split('T')[0]; // if end date is today or in past relative to today
+
+     const randomDaysBeforeEndDate = Math.floor(Math.random() * daysBetween) + 1;
      const newStartDate = new Date(endDate);
-     newStartDate.setDate(endDate.getDate() - daysBeforeEndDate);
+     newStartDate.setDate(endDate.getDate() - randomDaysBeforeEndDate);
      return newStartDate > today ? today.toISOString().split('T')[0] : newStartDate.toISOString().split('T')[0];
   }
-  
+
   return startDate.toISOString().split('T')[0];
 };
 
@@ -855,17 +858,63 @@ const projectInputData = [
   { client: 'Avanzar', project: 'AVANZAR: web dev estimate', due: '6/12/24' },
 ];
 
+const clientIndustries: Record<string, string> = {
+  "Meeting Point Health": "Healthcare",
+  "Bridgeway Academy": "Education",
+  "Bergen Oral": "Healthcare",
+  "Transworld": "Business Services",
+  "Nielsen Automotive Group": "Automotive",
+  "Dave Cantin Group": "Automotive",
+  "SGW Law": "Legal",
+  "JAG Physical Therapy": "Healthcare",
+  "Cg Team": "Finance",
+  "Town Square Marlton NJ": "Senior Care",
+  "Town Square Jersey Shore": "Senior Care",
+  "The Dome at Adventure Crossing": "Entertainment",
+  "Single Throw Operations": "Marketing Agency",
+  "SH Town Square Franchsing, Inc": "Franchising",
+  "Seaview Orthopaedics": "Healthcare",
+  "Sally Boy's Pizza": "Food & Beverage",
+  "Performance Ortho": "Healthcare",
+  "Micro Air, LLC": "Manufacturing",
+  "Impackt Packaging Solutions": "Manufacturing",
+  "Dealer News Today": "Media",
+  "DCG Giving": "Non-profit",
+  "CareOne": "Healthcare",
+  "Avanzar": "Non-profit",
+  "Zippo's": "Retail",
+  "Veronica Jauregui": "Professional Services",
+  "Ray Catena Motorcar": "Automotive"
+};
+
+// Generate mockClients from projectInputData
+const uniqueClientNames = Array.from(new Set(projectInputData.map(p => p.client.trim())));
+export const mockClients: Client[] = uniqueClientNames.map((clientName, index) => {
+    const clientProjects = projectInputData.filter(p => p.client.trim() === clientName);
+    const primaryContactProject = clientProjects.find(p => p.client && p.client.length > 0); // Simplistic way to find a contact
+
+    return {
+        id: `client${index + 1}`,
+        name: clientName,
+        contactPerson: primaryContactProject?.client ? `${primaryContactProject.client.split(' ')[0]} Contact` : `Contact ${index + 1}`,
+        contactEmail: primaryContactProject?.client ? `${primaryContactProject.client.split(' ')[0].toLowerCase()}@example.com` : `contact${index+1}@example.com`,
+        industry: clientIndustries[clientName] || "Various",
+        notes: `Notes for ${clientName}`,
+        logoUrl: `https://placehold.co/100x100.png?text=${clientName.substring(0,1)}`
+    };
+});
+
 
 export const mockProjects: Project[] = projectInputData.map((item, index) => {
   const parsedEndDate = parseDate(item.due);
   let status: Project['status'] = 'Planning';
   let teamRating: number | undefined = undefined;
   const today = new Date();
-  today.setHours(0,0,0,0); 
+  today.setHours(0,0,0,0);
 
   if (parsedEndDate) {
     const endDateObj = new Date(parsedEndDate);
-    if (isNaN(endDateObj.getTime())) { // Invalid date parsed
+    if (isNaN(endDateObj.getTime())) {
         status = 'Planning';
     } else if (endDateObj < today) {
       status = 'Completed';
@@ -874,23 +923,26 @@ export const mockProjects: Project[] = projectInputData.map((item, index) => {
       status = 'In Progress';
     }
   } else {
-    status = 'Planning'; // No due date
+    status = 'Planning';
   }
-  
-  // Ensure project name uniqueness or specific formatting
-  const projectName = item.project.toLocaleLowerCase().startsWith(item.client.toLocaleLowerCase()) 
-    ? item.project 
-    : `${item.client} - ${item.project}`;
+
+  const clientName = item.client.trim();
+  const client = mockClients.find(c => c.name === clientName);
+
+  const projectName = item.project.toLocaleLowerCase().startsWith(clientName.toLocaleLowerCase())
+    ? item.project
+    : `${clientName} - ${item.project}`;
 
   return {
     id: `project${index + 1}`,
     name: projectName,
-    description: item.project, // Using the original project name as description
+    description: item.project,
     status: status,
     budget: generateRandomBudget(),
     startDate: generateStartDate(parsedEndDate),
     endDate: parsedEndDate,
     vendorId: mockVendors.length > 0 ? mockVendors[Math.floor(Math.random() * mockVendors.length)].id : undefined,
+    clientId: client?.id,
     teamRating: teamRating,
   };
 });

@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -17,6 +18,7 @@ import { cn } from '@/lib/utils';
 
 const navItems = [
   { href: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { href: '/clients', label: 'Clients', icon: Users },
   { href: '/vendors', label: 'Vendors', icon: Building2 },
   { href: '/projects', label: 'Projects', icon: Briefcase },
   { href: '/chat', label: 'ViRA Chat', icon: MessageSquare },

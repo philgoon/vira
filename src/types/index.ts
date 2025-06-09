@@ -8,7 +8,17 @@ export interface Vendor {
   services: string[];
   contactEmail: string;
   notes?: string;
-  imageUrl?: string; 
+  imageUrl?: string;
+}
+
+export interface Client {
+  id: string;
+  name: string;
+  contactPerson?: string;
+  contactEmail?: string;
+  industry?: string;
+  notes?: string;
+  logoUrl?: string;
 }
 
 export interface Project {
@@ -17,9 +27,10 @@ export interface Project {
   description: string;
   status: 'Planning' | 'In Progress' | 'Completed' | 'On Hold';
   budget: number;
-  startDate?: string; 
+  startDate?: string;
   endDate?: string;
   vendorId?: string;
+  clientId?: string; // Added clientId
   teamRating?: number; // Rating given by the team for this project with this vendor
 }
 
