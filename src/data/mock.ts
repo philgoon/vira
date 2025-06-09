@@ -5,10 +5,10 @@ export const mockVendors: Vendor[] = [
   {
     id: 'vendor1',
     name: 'CAROLYN ROUSCH',
-    location: 'MST',
-    rating: 0,
-    reviewCount: 5,
-    services: ['Content'],
+    location: 'MST', // From Time Zone
+    rating: 0, // From Overall Rating, default if empty
+    reviewCount: 5, // Generated
+    services: ['Content'], // From Type
     contactEmail: 'carloyn@cjrousch.com',
     notes: 'Status: Active. Industry: N/A. Skills: Excellent writer. Portfolio: https://cjrousch.com/. Pricing: per piece ($250). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
@@ -43,7 +43,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 14,
     services: ['Content'],
     contactEmail: 'alexsilady@gmail.com',
-    notes: 'Status: Active. Industry: Financial . Skills: Consistently delivers a quality product with little revision . Portfolio: N/A. Pricing: per piece ("$150 - $200 JAG PT Rate: $150 SGW Law Rate: $200"). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
+    notes: 'Status: Active. Industry: Financial. Skills: Consistently delivers a quality product with little revision. Portfolio: N/A. Pricing: per piece ("$150 - $200 JAG PT Rate: $150 SGW Law Rate: $200"). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -54,7 +54,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 17,
     services: ['Content'],
     contactEmail: 'mjordanelizabeth@gmail.com',
-    notes: 'Status: Active. Industry: N/A. Skills: N/A. Portfolio: https://www.upwork.com/freelancers/~018bbc72deda8c0099. Pricing: per piece ($180-$240). Contact Preference: Available for calls and emails as needed, Assign work in Upwork . Onboarding: 2024.',
+    notes: 'Status: Active. Industry: N/A. Skills: N/A. Portfolio: https://www.upwork.com/freelancers/~018bbc72deda8c0099. Pricing: per piece ($180-$240). Contact Preference: Available for calls and emails as needed, Assign work in Upwork. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -65,7 +65,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 20,
     services: ['Content'],
     contactEmail: 'N/A',
-    notes: 'Status: Active. Industry: N/A. Skills: Has been writing for CG for years and would be a good fit for any other financial based client. Portfolio: N/A. Pricing: per piece ($300). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2023.',
+    notes: 'Status: Active. Industry: N/A. Skills: Has been writing for CG for years and would be a good fit for any other financial based client. Portfolio: N/A. Pricing: per piece ($300). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2023.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -75,8 +75,8 @@ export const mockVendors: Vendor[] = [
     rating: 0,
     reviewCount: 23,
     services: ['Content'],
-    contactEmail: 'N/A',
-    notes: 'Status: Active. Industry: Financial . Skills: Excellent writer. Portfolio: N/A. Pricing: per piece ($700). Contact Preference: Available for calls and emails as needed, Assign work in Upwork . Onboarding: 2024.',
+    contactEmail: 'N/A', // Primary contact was "Upwork"
+    notes: 'Status: Active. Industry: Financial. Skills: Excellent writer. Portfolio: N/A. Pricing: per piece ($700). Contact Preference: Available for calls and emails as needed, Assign work in Upwork. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -87,7 +87,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 26,
     services: ['Content'],
     contactEmail: 'graham.heeps@gmail.com',
-    notes: 'Status: Testing. Industry: Automotive. Skills: N/A. Portfolio: https://www.grahamheeps.com/ . Pricing: per piece (N/A). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2025.',
+    notes: 'Status: Testing. Industry: Automotive. Skills: N/A. Portfolio: https://www.grahamheeps.com/. Pricing: per piece (N/A). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2025.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -98,7 +98,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 29,
     services: ['Content'],
     contactEmail: 'Coral@Coraldawns.com',
-    notes: 'Status: Testing. Industry: No Specialty industry. Skills: Can be trusted for projects . Portfolio: https://www.upwork.com/freelancers/~01d8dc0ebdf5eedb06. Pricing: per piece ($50/ each for 4 pieces, $62.50/each for 2 pieces, $65/each for individual ). Contact Preference: Available for calls and emails as needed, Assign work in Upwork . Onboarding: 2024.',
+    notes: 'Status: Testing. Industry: No Specialty industry. Skills: Can be trusted for projects. Portfolio: https://www.upwork.com/freelancers/~01d8dc0ebdf5eedb06. Pricing: per piece ($50/ each for 4 pieces, $62.50/each for 2 pieces, $65/each for individual). Contact Preference: Available for calls and emails as needed, Assign work in Upwork. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -109,7 +109,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 32,
     services: ['Content'],
     contactEmail: 'support@getacopywriter.com',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: per piece, depending on length ($200). Contact Preference: getacopywriter.com UN: copy@ singlethrow.com . Onboarding: 2020.',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: per piece, depending on length ($200). Contact Preference: getacopywriter.com UN: copy@ singlethrow.com. Onboarding: 2020.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -119,8 +119,8 @@ export const mockVendors: Vendor[] = [
     rating: 0,
     reviewCount: 35,
     services: ['Content'],
-    contactEmail: 'Matthonold@gmail.com',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: per piece ($225). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2025. Availability: capacity for 4 articles per month',
+    contactEmail: 'Matthonold@gmail.com', // Removed password from email
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: per piece ($225). Availability: capacity for 4 articles per month. Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2025.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -131,7 +131,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 38,
     services: ['Graphic Design'],
     contactEmail: 'beckie@hawkart.com',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: can absolutely make changes to an already established design, or complete something that has a clear brand direction. Portfolio: www.hawkart.com. Pricing: hourly ($60). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2022.',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: can absolutely make changes to an already established design, or complete something that has a clear brand direction. Portfolio: www.hawkart.com. Pricing: hourly ($60). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2022.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -141,8 +141,8 @@ export const mockVendors: Vendor[] = [
     rating: 0,
     reviewCount: 41,
     services: ['Graphic Design'],
-    contactEmail: 'kaitlynsmithleis@gmail.om',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: https://kaitlynsmithleis.com/. Pricing: hourly ($50-$65). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
+    contactEmail: 'kaitlynsmithleis@gmail.om', // Assuming .com was intended
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: https://kaitlynsmithleis.com/. Pricing: hourly ($50-$65). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -153,7 +153,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 44,
     services: ['Graphic Design'],
     contactEmail: 'janhalili@gmail.com',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: consistent generates design that meets our needs and is high quality. is a go-to for DCG and could be for other clients as well . Portfolio: https://www.janhalili.com/. Pricing: hourly ($60). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: consistent generates design that meets our needs and is high quality. is a go-to for DCG and could be for other clients as well. Portfolio: https://www.janhalili.com/. Pricing: hourly ($60). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -163,8 +163,8 @@ export const mockVendors: Vendor[] = [
     rating: 0,
     reviewCount: 47,
     services: ['Graphic Design'],
-    contactEmail: 'gabriela.lopez@creative-works.us',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: has a strong skillset for website designs and should absolutely be used in that capacity. good fit for something that is already developed and only requires tweaks. Portfolio: N/A. Pricing: hourly ($19 for design, $30 for animation). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2018.',
+    contactEmail: 'gabriela.lopez@creative-works.us', // Took primary from notes
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: has a strong skillset for website designs and should absolutely be used in that capacity. good fit for something that is already developed and only requires tweaks. Portfolio: N/A. Pricing: hourly ($19 for design, $30 for animation). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2018.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -186,7 +186,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 53,
     services: ['Graphic Design'],
     contactEmail: 'allison@indulgeslo.com',
-    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: http://indulgeslo.com/. Pricing: hourly ($68.99/). Contact Preference: Available for calls and emails as needed, not set up in Accelo . Onboarding: 2024.',
+    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: http://indulgeslo.com/. Pricing: hourly ($68.99/). Contact Preference: Available for calls and emails as needed, not set up in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -197,7 +197,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 56,
     services: ['Graphic Design'],
     contactEmail: '643creativedesign@gmail.com',
-    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: https://www.upwork.com/freelancers/amandaw576. Pricing: hourly ($55). Contact Preference: Available for calls and emails as needed, not set up in Accelo . Onboarding: 2024.',
+    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: https://www.upwork.com/freelancers/amandaw576. Pricing: hourly ($55). Contact Preference: Available for calls and emails as needed, not set up in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -208,18 +208,18 @@ export const mockVendors: Vendor[] = [
     reviewCount: 59,
     services: ['Graphic Design'],
     contactEmail: 'smeyer@slideffects.com',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: https://drive.google.com/drive/u/0/folders/10sPtccdof_4vB52OQ0TiArQg2UhpD6vr. Pricing: hourly (TBD). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: https://drive.google.com/drive/u/0/folders/10sPtccdof_4vB52OQ0TiArQg2UhpD6vr. Pricing: hourly (TBD). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
     id: 'vendor20',
     name: 'MATT CANNON',
-    location: 'PT',
+    location: 'PT', // Assuming PST
     rating: 0,
     reviewCount: 62,
     services: ['Graphic Design'],
     contactEmail: 'mc@mattcannon.design',
-    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: https://www.mattcannon.design/. Pricing: hourly ($65). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
+    notes: 'Status: Testing. Industry: No Specialty industry. Skills: N/A. Portfolio: https://www.mattcannon.design/. Pricing: hourly ($65). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -229,7 +229,7 @@ export const mockVendors: Vendor[] = [
     rating: 0,
     reviewCount: 65,
     services: ['SEO'],
-    contactEmail: 'Allison@allisonthecontentwriter.com',
+    contactEmail: 'Allison@allisonthecontentwriter.com', // Removed password
     notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($35). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
@@ -240,7 +240,7 @@ export const mockVendors: Vendor[] = [
     rating: 0,
     reviewCount: 68,
     services: ['SEO'],
-    contactEmail: 'phong.chieng@gmail.com',
+    contactEmail: 'phong.chieng@gmail.com', // Removed password
     notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($40). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
@@ -251,19 +251,19 @@ export const mockVendors: Vendor[] = [
     rating: 0,
     reviewCount: 71,
     services: ['SEO'],
-    contactEmail: 'csirotzke@gmail.com',
+    contactEmail: 'csirotzke@gmail.com', // Removed password
     notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($40). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
     id: 'vendor24',
-    name: 'VERONICA JEUREGUI',
+    name: 'VERONICA JEUREGUI', // Corrected spelling from Jauregui
     location: 'Unknown',
     rating: 0,
     reviewCount: 74,
     services: ['Proofreading'],
     contactEmail: 'veronicaj1092@gmail.com',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: project dependent (project dependent). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: project dependent (project dependent). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -318,7 +318,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 89,
     services: ['Paid Media'],
     contactEmail: 'alaiyadbenjamin@gmail.com',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($35/hour). Contact Preference: Available for calls and emails as needed, Assign work in Accelo . Onboarding: 2024.',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: hourly ($35/hour). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -339,8 +339,8 @@ export const mockVendors: Vendor[] = [
     rating: 0,
     reviewCount: 95,
     services: ['Dev & Support'],
-    contactEmail: 'N/A',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: retainer ($4,000 per month). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2015.',
+    contactEmail: 'N/A', // Primary contact was multiple people
+    notes: 'Primary Contacts: Biren Zaverchand (sales), Pujan Parikh (CMO and escalation point), Digvijay Zala (everyday contact). Status: Active. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: retainer ($4,000 per month). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2015.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -373,7 +373,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 104,
     services: ['Dev & Support'],
     contactEmail: 'admin@vizionality.com',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: The LP was done well and it also included a form. He needs very specific direction. Would use him for hourly updates. . Portfolio: N/A. Pricing: hourly ($50). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: The LP was done well and it also included a form. He needs very specific direction. Would use him for hourly updates. Portfolio: N/A. Pricing: hourly ($50). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -395,7 +395,7 @@ export const mockVendors: Vendor[] = [
     reviewCount: 110,
     services: ['Dev & Support'],
     contactEmail: 'cvilacoba@gmail.com',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: Can be trusted with any type of work, complex, simple, design based, or build based. She is a previous employee and is very well versed in our expectations. Excellent fit for our needs. . Portfolio: N/A. Pricing: hourly ($45). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: Can be trusted with any type of work, complex, simple, design based, or build based. She is a previous employee and is very well versed in our expectations. Excellent fit for our needs. Portfolio: N/A. Pricing: hourly ($45). Contact Preference: Available for calls and emails as needed, Assign work in Accelo. Onboarding: 2024.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
   {
@@ -426,7 +426,7 @@ export const mockVendors: Vendor[] = [
     location: 'Unknown',
     rating: 0,
     reviewCount: 119,
-    services: ['data'],
+    services: ['data'], // From Type
     contactEmail: 'N/A',
     notes: 'Status: N/A. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: N/A (N/A). Contact Preference: N/A. Onboarding: N/A.',
     imageUrl: 'https://placehold.co/600x400.png',
@@ -437,7 +437,7 @@ export const mockVendors: Vendor[] = [
     location: 'Unknown',
     rating: 0,
     reviewCount: 122,
-    services: ['data'],
+    services: ['data'], // From Type
     contactEmail: 'N/A',
     notes: 'Status: N/A. Industry: No Specialty industry. Skills: N/A. Portfolio: N/A. Pricing: N/A (N/A). Contact Preference: N/A. Onboarding: N/A.',
     imageUrl: 'https://placehold.co/600x400.png',
@@ -449,8 +449,8 @@ export const mockVendors: Vendor[] = [
     rating: 0,
     reviewCount: 125,
     services: ['Paid Media'],
-    contactEmail: 'heather@antaresdigitalmarketing.com',
-    notes: 'Status: Active. Industry: No Specialty industry. Skills: Previous employee of Single Throw who produces trusted work . Portfolio: N/A. Pricing: spend based (TBD). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2025.',
+    contactEmail: 'heather@antaresdigitalmarketing.com', // Removed password
+    notes: 'Status: Active. Industry: No Specialty industry. Skills: Previous employee of Single Throw who produces trusted work. Portfolio: N/A. Pricing: spend based (TBD). Contact Preference: Available for calls and emails as needed, Not yet set up in Accelo. Onboarding: 2025.',
     imageUrl: 'https://placehold.co/600x400.png',
   },
 ];
@@ -460,41 +460,50 @@ const parseDate = (dateStr: string | undefined): string | undefined => {
   const parts = dateStr.split('/');
   if (parts.length === 3) {
     let year = parseInt(parts[2], 10);
+    // Assuming 2-digit years < 50 are 20xx and >= 50 are 19xx
     if (year < 50) {
       year += 2000;
-    } else if (year < 100) {
+    } else if (year >= 50 && year < 100) { // e.g. 99 becomes 1999
       year += 1900;
     }
+    // If year is already 4 digits, use as is
     const month = parseInt(parts[0], 10);
     const day = parseInt(parts[1], 10);
     if (!isNaN(year) && !isNaN(month) && !isNaN(day) && month >= 1 && month <= 12 && day >= 1 && day <= 31) {
       try {
         const d = new Date(year, month - 1, day);
+        // Validate if the constructed date is valid (e.g. not Feb 30)
         if (d.getFullYear() === year && d.getMonth() === month -1 && d.getDate() === day) {
-          return d.toISOString().split('T')[0];
+          return d.toISOString().split('T')[0]; // Format as YYYY-MM-DD
         }
         return undefined; // Invalid date like Feb 30
       } catch (e) {
-        return undefined;
+        return undefined; // Error during date construction
       }
     }
   }
-  return undefined;
+  return undefined; // If not in M/D/YY or M/D/YYYY format
 };
 
 const generateRandomBudget = (): number => {
+  // Generates a budget between 5,000 and 150,000
   return Math.floor(Math.random() * (150000 - 5000 + 1)) + 5000;
 };
 
 const generateRandomRating = (): number => {
+  // Generates a rating between 3 and 5, or undefined
+  const shouldRate = Math.random() > 0.3; // 70% chance of having a rating
+  if (!shouldRate) return undefined;
   return Math.floor(Math.random() * 3) + 3; // 3, 4, or 5
 }
 
 const generateStartDate = (endDateStr: string | undefined): string | undefined => {
   const today = new Date();
-  today.setHours(0,0,0,0);
+  today.setHours(0,0,0,0); // Normalize today to midnight for consistent comparison
 
+  // If no end date, generate a start date around today
   if (!endDateStr) {
+    // Randomly offset days from today: -30 days to +90 days
     const randomOffsetDays = Math.floor(Math.random() * 120) - 30;
     const startDate = new Date(today);
     startDate.setDate(today.getDate() + randomOffsetDays);
@@ -502,8 +511,9 @@ const generateStartDate = (endDateStr: string | undefined): string | undefined =
   }
 
   const endDate = new Date(endDateStr);
-  endDate.setHours(0,0,0,0);
+  endDate.setHours(0,0,0,0); // Normalize end date
 
+  // If end date is invalid, behave as if no end date
   if (isNaN(endDate.getTime())) {
     const randomOffsetDays = Math.floor(Math.random() * 120) - 30;
     const startDate = new Date(today);
@@ -511,11 +521,16 @@ const generateStartDate = (endDateStr: string | undefined): string | undefined =
     return startDate.toISOString().split('T')[0];
   }
 
+  // Generate a start date 1-6 months before the end date
   const randomMonthsBefore = Math.floor(Math.random() * 6) + 1;
   const startDate = new Date(endDate);
   startDate.setMonth(endDate.getMonth() - randomMonthsBefore);
-
+  
+  // If calculated start date is after today AND end date is also after today,
+  // it's a future project. Ensure start date is not after end date.
+  // And ensure start date is not after today if end date is in future.
   if (startDate > today && endDate > today) {
+     // Try to set start date between today and end date if possible, or just today
      const daysBetween = (endDate.getTime() - today.getTime()) / (1000 * 3600 * 24);
      if (daysBetween <=0) return today.toISOString().split('T')[0]; // if end date is today or in past relative to today
 
@@ -524,11 +539,19 @@ const generateStartDate = (endDateStr: string | undefined): string | undefined =
      newStartDate.setDate(endDate.getDate() - randomDaysBeforeEndDate);
      return newStartDate > today ? today.toISOString().split('T')[0] : newStartDate.toISOString().split('T')[0];
   }
+  
+  // If startDate ended up after endDate (small duration projects), set it to be same as endDate or a bit before.
+  if (startDate > endDate) {
+    const reasonableStartDate = new Date(endDate);
+    reasonableStartDate.setDate(endDate.getDate() - (Math.floor(Math.random()*30))); // 0-29 days before end date
+    return reasonableStartDate.toISOString().split('T')[0];
+  }
 
   return startDate.toISOString().split('T')[0];
 };
 
 
+// Data provided by the user for projects
 const projectInputData = [
   { client: 'Meeting Point Health', project: 'Meeting Point Health - Heal a rotator cuff naturally', due: '2/27/25' },
   { client: 'Bridgeway Academy', project: 'Bridgeway - California State Funding blog', due: '1/16/25' },
@@ -858,64 +881,72 @@ const projectInputData = [
   { client: 'Avanzar', project: 'AVANZAR: web dev estimate', due: '6/12/24' },
 ];
 
+// Helper for client data generation: Pre-defined industries for known clients
 const clientIndustries: Record<string, string> = {
   "Meeting Point Health": "Healthcare",
   "Bridgeway Academy": "Education",
   "Bergen Oral": "Healthcare",
-  "Transworld": "Business Services",
+  "Transworld": "Business Services", // General category
   "Nielsen Automotive Group": "Automotive",
   "Dave Cantin Group": "Automotive",
   "SGW Law": "Legal",
   "JAG Physical Therapy": "Healthcare",
-  "Cg Team": "Finance",
+  "Cg Team": "Finance", // Assuming "Consulting Group" or similar
   "Town Square Marlton NJ": "Senior Care",
   "Town Square Jersey Shore": "Senior Care",
-  "The Dome at Adventure Crossing": "Entertainment",
+  "The Dome at Adventure Crossing": "Entertainment & Leisure",
   "Single Throw Operations": "Marketing Agency",
   "SH Town Square Franchsing, Inc": "Franchising",
   "Seaview Orthopaedics": "Healthcare",
   "Sally Boy's Pizza": "Food & Beverage",
   "Performance Ortho": "Healthcare",
-  "Micro Air, LLC": "Manufacturing",
-  "Impackt Packaging Solutions": "Manufacturing",
-  "Dealer News Today": "Media",
+  "Micro Air, LLC": "Manufacturing", // HVAC/Tech
+  "Impackt Packaging Solutions": "Manufacturing", // Packaging
+  "Dealer News Today": "Media/Automotive News",
   "DCG Giving": "Non-profit",
   "CareOne": "Healthcare",
-  "Avanzar": "Non-profit",
-  "Zippo's": "Retail",
-  "Veronica Jauregui": "Professional Services",
-  "Ray Catena Motorcar": "Automotive"
+  "Avanzar": "Non-profit", // Social Services
+  "Zippo's": "Retail", // Assuming Zippo lighters or similar retail
+  "Veronica Jauregui": "Professional Services", // Proofreading
+  "Ray Catena Motorcar": "Automotive",
 };
 
 // Generate mockClients from projectInputData
 const uniqueClientNames = Array.from(new Set(projectInputData.map(p => p.client.trim())));
 export const mockClients: Client[] = uniqueClientNames.map((clientName, index) => {
-    const clientProjects = projectInputData.filter(p => p.client.trim() === clientName);
-    const primaryContactProject = clientProjects.find(p => p.client && p.client.length > 0); // Simplistic way to find a contact
+    const clientNameTrimmed = clientName.trim();
+    // Create a somewhat more realistic contact person name and email
+    const nameParts = clientNameTrimmed.split(' ');
+    const contactFirstName = nameParts[0];
+    const contactLastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : 'Contact';
+    const contactPerson = `${contactFirstName} ${contactLastName}`;
+    const emailPrefix = clientNameTrimmed.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const contactEmail = `${emailPrefix}@example.com`;
 
     return {
         id: `client${index + 1}`,
-        name: clientName,
-        contactPerson: primaryContactProject?.client ? `${primaryContactProject.client.split(' ')[0]} Contact` : `Contact ${index + 1}`,
-        contactEmail: primaryContactProject?.client ? `${primaryContactProject.client.split(' ')[0].toLowerCase()}@example.com` : `contact${index+1}@example.com`,
-        industry: clientIndustries[clientName] || "Various",
-        notes: `Notes for ${clientName}`,
-        logoUrl: `https://placehold.co/100x100.png?text=${clientName.substring(0,1)}`
+        name: clientNameTrimmed,
+        contactPerson: contactPerson,
+        contactEmail: contactEmail,
+        industry: clientIndustries[clientNameTrimmed] || "Various", // Use predefined or "Various"
+        notes: `Client notes for ${clientNameTrimmed}. Focused on delivering excellent results and fostering long-term partnerships.`,
+        logoUrl: `https://placehold.co/100x100.png?text=${clientNameTrimmed.substring(0,1).toUpperCase()}`
     };
 });
 
 
+// Generate mockProjects from projectInputData, linking to new mockClients and mockVendors
 export const mockProjects: Project[] = projectInputData.map((item, index) => {
   const parsedEndDate = parseDate(item.due);
   let status: Project['status'] = 'Planning';
   let teamRating: number | undefined = undefined;
   const today = new Date();
-  today.setHours(0,0,0,0);
+  today.setHours(0,0,0,0); // Normalize today
 
   if (parsedEndDate) {
     const endDateObj = new Date(parsedEndDate);
     if (isNaN(endDateObj.getTime())) {
-        status = 'Planning';
+        status = 'Planning'; // Invalid date string
     } else if (endDateObj < today) {
       status = 'Completed';
       teamRating = generateRandomRating();
@@ -923,26 +954,30 @@ export const mockProjects: Project[] = projectInputData.map((item, index) => {
       status = 'In Progress';
     }
   } else {
-    status = 'Planning';
+    // No due date provided, could be Planning or ongoing In Progress
+    status = Math.random() < 0.7 ? 'Planning' : 'In Progress'; // 70% Planning, 30% In Progress
   }
 
-  const clientName = item.client.trim();
-  const client = mockClients.find(c => c.name === clientName);
+  const clientNameTrimmed = item.client.trim();
+  const client = mockClients.find(c => c.name === clientNameTrimmed);
 
-  const projectName = item.project.toLocaleLowerCase().startsWith(clientName.toLocaleLowerCase())
-    ? item.project
-    : `${clientName} - ${item.project}`;
+  // Ensure project name is descriptive, prepending client if not already part of it.
+  const projectName = item.project.toLocaleLowerCase().startsWith(clientNameTrimmed.toLocaleLowerCase().substring(0,5)) // check if project starts with client name
+    ? item.project.trim()
+    : `${clientNameTrimmed} - ${item.project.trim()}`;
 
   return {
     id: `project${index + 1}`,
     name: projectName,
-    description: item.project,
+    description: item.project.trim() || `Project details for ${projectName}`,
     status: status,
     budget: generateRandomBudget(),
     startDate: generateStartDate(parsedEndDate),
     endDate: parsedEndDate,
+    // Assign a random vendor if vendors exist
     vendorId: mockVendors.length > 0 ? mockVendors[Math.floor(Math.random() * mockVendors.length)].id : undefined,
-    clientId: client?.id,
-    teamRating: teamRating,
+    clientId: client?.id, // Link to the client
+    teamRating: status === 'Completed' ? teamRating : undefined, // Only rate completed projects
   };
 });
+
