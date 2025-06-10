@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlusCircle, Users, Mail, Briefcase, Edit, Trash2 } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image'; // Removed Image import
 import { getClients, createClient, updateClient, deleteClient, getProjects } from '@/services/firebase';
 import { ClientForm } from '@/components/forms/ClientForm';
 import { useToast } from '@/hooks/use-toast';
@@ -151,7 +151,7 @@ export default function ClientsPage() {
             <Card key={client.id} className="flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
                  <div className="flex items-center gap-4 mb-2">
-                  {client.logoUrl && (
+                  {/* {client.logoUrl && (
                     <Image
                       src={client.logoUrl}
                       alt={`${client.name} logo`}
@@ -159,7 +159,7 @@ export default function ClientsPage() {
                       height={48}
                       className="rounded-md object-contain"
                     />
-                  )}
+                  )}*/}
                   <CardTitle className="font-headline text-xl text-primary">{client.name}</CardTitle>
                 </div>
                 {client.industry && (

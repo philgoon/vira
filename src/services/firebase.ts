@@ -2,7 +2,7 @@
 import { app, db } from '@/lib/firebase/config';
 import { collection, getDocs, doc, getDoc, addDoc, updateDoc, deleteDoc, query, where, writeBatch, setDoc } from 'firebase/firestore';
 import { getFunctions, httpsCallable } from 'firebase/functions';
-import type { Vendor, Project, Client, ProjectRequirements, VendorRecommendation } from '@/types';
+import type { Vendor, Project, Client, ProjectRequirements, VendorRecommendation, VendorRating } from '@/types';
 import type { InteractiveVendorQAInput, InteractiveVendorQAOutput } from '@/types/ai';
 
 const functions = getFunctions(app);
@@ -117,6 +117,21 @@ export const addProjectRating = async (projectId: string, vendorId: string, rati
     const updatedVendor = await getDoc(vendorDoc);
     return { id: updatedVendor.id, ...updatedVendor.data() } as Vendor;
 };
+
+// [Phase 1, Task 2] Adds a new vendor rating record to Firestore.
+export const addVendorRating = async (ratingData: Omit<VendorRating, 'id'>): Promise<VendorRating> => {
+    const docRef = await addDoc(collection(db, 'vendorRatings'), ratingData);
+    return { id: docRef.id, ...ratingData };
+};
+
+// [Phase 1, Task 2] Fetches vendor rating records for a specific vendor from Firestore.
+export const getVendorRatingsByVendorId = async (vendorId: string): Promise<VendorRating[]> => {
+    const ratingsCol = collection(db, 'vendorRatings');
+    const q = query(ratingsCol, where("vendorId", "==", vendorId));
+    const ratingSnapshot = await getDocs(q);
+    return ratingSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as VendorRating));
+};
+
 
 // --- AI OPERATIONS ---
 // [R4.1] Connects to the deployed `matchVendors` Firebase Function.

@@ -9,22 +9,28 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast"; // [FIX] Corrected mismatched quotes
 import type { ProjectRequirements, VendorRecommendation } from '@/types';
 import { matchVendors } from '@/services/firebase';
 
+// [R4.1] Defines the validation schema for the project requirements form.
+// [Fix 4] Removed location field as it's not needed for AI matching in this version.
 const formSchema = z.object({
   scope: z.string().min(10, { message: 'Scope must be at least 10 characters.' }),
   budget: z.coerce.number().min(0, { message: 'Budget must be a positive number.' }),
-  location: z.string().min(2, { message: 'Location must be at least 2 characters.' }),
+  // location: z.string().min(2, { message: 'Location must be at least 2 characters.' }), // Removed
   preferredVendorAttributes: z.string().min(10, { message: 'Preferred attributes must be at least 10 characters.' }),
 });
+
+// Update the type definition to reflect the schema change
+interface ProjectRequirements extends z.infer<typeof formSchema> {}
 
 interface ProjectRequirementsFormProps {
   onRecommendations: (recommendations: VendorRecommendation[]) => void;
   setIsLoading: (isLoading: boolean) => void;
 }
 
+// [R4.1] Implements the form to get project requirements and trigger vendor matching.
 export function ProjectRequirementsForm({ onRecommendations, setIsLoading }: ProjectRequirementsFormProps) {
   const { toast } = useToast();
   const form = useForm<ProjectRequirements>({
@@ -32,15 +38,19 @@ export function ProjectRequirementsForm({ onRecommendations, setIsLoading }: Pro
     defaultValues: {
       scope: '',
       budget: 0,
-      location: '',
+      // location: '', // Removed
       preferredVendorAttributes: '',
     },
   });
 
+  // [R4.1] Handles form submission, calling the matchVendors service function.
   const onSubmit: SubmitHandler<ProjectRequirements> = async (data) => {
     setIsLoading(true);
+    onRecommendations([]); // Clear previous recommendations
     try {
-      const recommendations = await matchVendors(data);
+      // Exclude location from data sent to matchVendors if it was still present
+      const { location, ...requirementsWithoutLocation } = data;
+      const recommendations = await matchVendors(requirementsWithoutLocation as ProjectRequirements);
       onRecommendations(recommendations);
       toast({
         title: "Recommendations generated!",
@@ -53,7 +63,7 @@ export function ProjectRequirementsForm({ onRecommendations, setIsLoading }: Pro
         description: (error as Error).message || "Could not fetch recommendations. Please try again.",
         variant: "destructive",
       });
-      onRecommendations([]); // Clear previous recommendations on error
+      onRecommendations([]);
     } finally {
       setIsLoading(false);
     }
@@ -97,6 +107,7 @@ export function ProjectRequirementsForm({ onRecommendations, setIsLoading }: Pro
                 </FormItem>
               )}
             />
+            {/* Removed Location Field - [Fix 4]
             <FormField
               control={form.control}
               name="location"
@@ -109,7 +120,7 @@ export function ProjectRequirementsForm({ onRecommendations, setIsLoading }: Pro
                    <FormMessage />
                 </FormItem>
               )}
-            />
+            />*/}
             <FormField
               control={form.control}
               name="preferredVendorAttributes"

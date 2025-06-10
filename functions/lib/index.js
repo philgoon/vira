@@ -44,18 +44,22 @@ const generative_ai_1 = require("@google/generative-ai");
 const geminiAI = new generative_ai_1.GoogleGenerativeAI(functions.config().gemini.key);
 const model = geminiAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 // [R4.1] Vendor Matching Function
-// Force redeploy 1
+// Force redeploy 3 - Trivial change to force deployment update
 exports.matchVendors = functions.https.onCall(async (data, context) => {
     const { scope, budget, location, preferredVendorAttributes } = data;
     // [R4.3] Fetch all vendors from Firestore
     const firestore = (0, firestore_1.getFirestore)();
     const vendorsSnapshot = await firestore.collection("vendors").get();
-    const vendors = vendorsSnapshot.docs.map(doc => doc.data());
-    // [R4.2] Create the prompt for the Gemini agent
+    // We fetch the data but will instruct the model to leverage its training/prior knowledge
+    // rather than embedding the full, potentially large, JSON in the prompt itself.
+    const vendors = vendorsSnapshot.docs.map(doc => doc.data()); // Keep for potential future use or more complex prompt
+    // [R4.2] Create a simplified prompt for the Gemini agent
     const prompt = `
-    You are a vendor recommendation expert. Based on the following project requirements,
-    and the provided list of vendors, return a ranked list of the top 3-5 vendor names 
-    that are the best match. Provide a short reason for each recommendation.
+    You are a vendor recommendation expert for a company called ViRA.
+    Based on the following project requirements, recommend a ranked list of the top 3-5 vendor names 
+    from the company's known vendors that are the best match. Provide a very short reason for each recommendation.
+    Do NOT include vendors if you do not have information about them.
+    Only respond with a JSON array of objects, each with "vendorName" and "reason" keys.
 
     Project Requirements:
     - Scope: ${scope}
@@ -63,24 +67,33 @@ exports.matchVendors = functions.https.onCall(async (data, context) => {
     - Location: ${location}
     - Preferred Attributes: ${preferredVendorAttributes}
 
-    Available Vendors:
-    ${JSON.stringify(vendors, null, 2)}
+    Available vendor names to consider (do not include other details in the prompt):
+    ${vendors.map(v => v.name).join(", ")}
 
-    Output format should be a JSON array of objects, each with "vendorName" and "reason" keys.
+    Return JSON only:
   `;
     try {
         const result = await model.generateContent(prompt);
         const response = await result.response;
         const text = response.text();
+        // [Debug] Log the raw response text before parsing
+        console.log("Raw Gemini API response text:", text);
         // Assuming the model returns a valid JSON string
         return JSON.parse(text);
     }
     catch (error) {
         console.error("Error calling Gemini API:", error);
+        // [Debug] Log the error details
+        if (error instanceof Error) {
+            console.error("Error message:", error.message);
+            // Attempt to log response body if available (depends on error structure)
+            // console.error("Error response:", (error as any).response?.data);
+        }
         throw new functions.https.HttpsError("internal", "Failed to get vendor recommendations.");
     }
 });
 // [R10.2] ViRA Chat Function
+// Force redeploy 2 - Trivial change to force deployment update
 exports.chatWithVira = functions.https.onCall(async (data, context) => {
     const { question, vendorData } = data;
     const prompt = `
